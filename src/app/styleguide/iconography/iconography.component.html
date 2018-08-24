@@ -1,0 +1,145 @@
+<section class="iconography">
+	<div class="styleguide-view-details">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>Iconography</h2>
+				<p>Good icons communicate information clearly with a simple picture. We use standard icons that are generally well-known and easily understood. Our icons are used at specific sizes and can be colorized to reinforce cognition.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Sizes</h3>
+		</div>
+	</div>
+
+	<div class="row examples">
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-person_account'" [size]="'icon-xs'" [style]="'text-black'" [ngClass]="{'Testing-ngClass': byFunction()}" ></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-person_account'" [size]="'icon-sm'" [style]="'text-black'"></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-person_account'" [size]="'icon-md'" [style]="'text-black'"></ui-icon>
+		</div>
+		<div class="col-xs-3">
+			<ui-icon [name]="'icon-person_account'" [size]="'icon-lg'" [style]="'text-black'"></ui-icon>
+		</div>
+		<div class="col-xs-3">
+			<ui-icon [name]="'icon-person_account'" [size]="'icon-xl'" [style]="'text-black'"></ui-icon>
+		</div>
+	</div>
+
+	<div class="row examples">
+		<div class="col-xs-2">
+			(extra small, 15px)
+		</div>
+		<div class="col-xs-2">
+			(small, 20px)
+		</div>
+		<div class="col-xs-2">
+			(medium, 24px)
+		</div>
+		<div class="col-xs-3">
+			(large, 32px)
+		</div>
+		<div class="col-xs-3">
+			(extra large, 48px)
+		</div>
+	</div>
+
+	<div class="spacer-2rem"></div>
+	<div class="spacer-2rem"></div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Colors</h3>
+		</div>
+	</div>
+	<div class="row flex examples">
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-person_account'" [size]="''" [style]="''"></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-app_search'" [size]="''" [style]="'text-blue'"></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-alerts_alert-triangle'" [size]="''" [style]="'text-warning'"></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-app_assignment-alert'" [size]="''" [style]="'text-alert'"></ui-icon>
+		</div>
+		<div class="col-xs-2">
+			<ui-icon [name]="'icon-form_check'" [size]="''" [style]="'text-success'"></ui-icon>
+		</div>
+	</div>
+	<div class="row flex examples">
+		<div class="col-xs-2">
+			Standard
+		</div>
+		<div class="col-xs-2">
+			Actionable
+		</div>
+		<div class="col-xs-2">
+			Alert
+		</div>
+		<div class="col-xs-2">
+			Required
+		</div>
+		<div class="col-xs-2">
+			Validated
+		</div>
+	</div>
+
+	<div class="spacer-2rem"></div>
+	<div class="spacer-2rem"></div>
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<h3 class="nomargin">Example:</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<article>
+				<div class="row nopadding">
+					<div class="col-xs-12">
+						<h3>Usage</h3>
+						<p>All you need to do is pass in the class `name` that represents the icon you want to use. See the following example:</p>
+						<p>Optional parameters include [size] and [style].</p>
+					</div>
+				</div>
+				<div class="row nopadding">
+					<div class="col-xs-12">
+						<pre class="pre" data-lang="html">&lt;ui-icon [name]="'icon-app_home'" [size]="''" [style]="''"&gt;&lt;/ui-icon&gt;</pre>
+						...which generates: <ui-icon [name]="'icon-app_home'" [size]="''" [style]="''"></ui-icon>
+					</div>
+				</div>
+				<div class="row nopadding">
+					<div class="col-xs-12">
+						<h3>Icons</h3>
+						<p>Simply click on the icon you need and the code below will be copied to your clipboard. <span class="copied" [ngClass]="{'active': copied}">copied!</span></p>
+						<pre class="pre" data-lang="html">{{iconCopiedString}}</pre>
+					</div>
+				</div>
+
+				<div class="row nopadding">
+					<div class="col-xs-12">
+
+						<!-- loop through the icomoon json file... -->
+						<div *ngFor="let icon of iconLibrary">
+							<ui-icon [name]="'icon-' + icon.properties.name + ''" [size]="'icon-lg'" (click)="copyIcon('icon-' + icon.properties.name + '');"></ui-icon>
+						</div>
+
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+
+</section>

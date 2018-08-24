@@ -1,0 +1,195 @@
+<section class="buttons">
+
+	<styleguide-view-details [title]="'Buttons'">
+		<div details-overview>
+			Displays when there is a primary function within a view.
+		</div>
+		<div details-usage>
+			Use as the main call to action.
+				May also be styled in black when used on a light, solid color such as yellow.
+		</div>
+		<div details-behavior>Initiates intended action. Can be disabled when required inputs are not completed.
+				Theming applies to color.
+		</div>
+	</styleguide-view-details>
+
+
+	<!-- Example usage  1 -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Standard button</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-4 ">
+			<ui-button>Standard</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button style="filled">Filled</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button style="disabled">Disabled</ui-button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<pre class="pre" data-lang="html">
+&lt;ui-button&gt;Standard&lt;/ui-button&gt;
+&lt;ui-button style="filled"&gt;Filled&lt;/ui-button&gt;
+&lt;ui-button style="disabled"&gt;Disabled&lt;/ui-button&gt;
+			</pre>
+		</div>
+	</div>
+<!-- EndExample 1 -->
+
+
+	<!-- Example usage  2 -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Alternate</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-4 ">
+			<ui-button type="alternate">Alternate</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="alternate" style="filled">Filled</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="alternate" style="disabled">Disabled</ui-button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<pre class="pre" data-lang="html">
+&lt;ui-button type="alternate"&gt;Alternate&lt;/ui-button&gt;
+&lt;ui-button type="alternate" style="filled"&gt;Filled&lt;/ui-button&gt;
+&lt;ui-button type="alternate" style="disabled"&gt;Disabled&lt;/ui-button&gt;
+			</pre>
+		</div>
+	</div>
+<!-- EndExample 2 -->
+
+
+
+	<!-- Example usage  3-->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Ghost</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-4 ">
+			<ui-button type="ghost">Alternate</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="ghost" style="white ">white</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="ghost" style="white active">active</ui-button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<pre class="pre" data-lang="html">
+&lt;ui-button type="ghost"&gt;Alternate&lt;/ui-button&gt;
+&lt;ui-button type="ghost" style="white"&gt;white&lt;/ui-button&gt;
+&lt;ui-button type="ghost" style="white  active"&gt;active&lt;/ui-button&gt;
+			</pre>
+		</div>
+	</div>
+<!-- EndExample 3 -->
+
+
+
+
+	<!-- Example usage  4-->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Size</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 ">
+			<ui-button size="small">small</ui-button>
+		</div>
+		<div class="col-xs-12 ">
+			<ui-button size="medium">medium</ui-button>
+		</div>
+		<div class="col-xs-12 ">
+			<ui-button size="button-large">button-large</ui-button>
+		</div>
+		<div class="col-xs-12 ">
+			<ui-button size="block">block</ui-button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<pre class="pre" data-lang="html">
+&lt;ui-button size="small"&gt;Alternate&lt;/ui-button&gt;
+&lt;ui-button size="medium"&gt;white&lt;/ui-button&gt;
+&lt;ui-button size="button-large"&gt;active&lt;/ui-button&gt;
+&lt;ui-button size="block"&gt;block&lt;/ui-button&gt;
+			</pre>
+		</div>
+	</div>
+<!-- EndExample 4 -->
+
+
+
+
+
+
+	<!-- Example usage  4-->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Other buttons</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-4 ">
+			<ui-button type="green">green</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="link">link</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="flat">flat</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="cancel">cancel</ui-button>
+		</div>
+		<div class="col-xs-4 ">
+			<ui-button type="continue">continue</ui-button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<pre class="pre" data-lang="html">
+&lt;ui-button type="green"&gt;green&lt;/ui-button&gt;
+&lt;ui-button type="link"&gt;link&lt;/ui-button&gt;
+&lt;ui-button type="flat"&gt;flat&lt;/ui-button&gt;
+&lt;ui-button type="cancel"&gt;cancel&lt;/ui-button&gt;
+&lt;ui-button type="continue"&gt;continue&lt;/ui-button&gt;
+			</pre>
+		</div>
+	</div>
+<!-- EndExample 4 -->
+
+</section>

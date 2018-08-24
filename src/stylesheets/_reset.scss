@@ -1,0 +1,125 @@
+// Reset
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html, body {
+	height: 100%;
+	font-size: 15px;
+}
+
+// Set up a default font and some padding to provide breathing room
+body {
+	background-color: $body-background;
+	font-family: $font-primary-light;
+	font-size: 15px;
+	line-height: 1;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Box-sizing border-box
+* {
+	        box-sizing: border-box;
+	outline: none;
+
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+//ul {
+//	margin: 10px 0 0;
+//	padding: 0 0 0 20px;
+//}
+
+li {
+	margin-top: 4px;
+	font-weight: 400;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+	border: 0;
+}
+
+input, select {
+	vertical-align: middle;
+}
+
+
+
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: 400;
+	letter-spacing: 0.010em;
+	line-height: 20px;
+}
+
+input {
+	outline: none;
+}
+
+button {
+	display: inline-block;
+	height: 40px;
+	padding: 8px 18px;
+	border-style: none;
+	color: rgba($white,0.87);
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+}

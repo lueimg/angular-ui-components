@@ -1,0 +1,316 @@
+<section class="modals">
+    <div class="row">
+        <div class="col-xs-12">
+            <styleguide-view-details title="Modal">
+                <div details-overview>
+                    Displays when information is needed to interrupt a user flow. Content may range from a simple message to the user to composing
+                    an email.
+                </div>
+                <div details-usage>
+                    Use to present focused information to the user. May utilize a standard or flat button as the primary action.
+                </div>
+                <div details-behavior>
+                    Overlay fades. Dialog fades and scales.
+                </div>
+            </styleguide-view-details>
+        </div>
+
+        <div class="col-xs-12">
+
+            <h3 class="nomargin">Basic Usage</h3>
+            <hr class="secondary">
+            <h6>Use an Event, such as a click on a button, to invoke the modals .open() function.</h6>
+            <div class="spacer-2rem"></div>
+
+            <div class="row">
+                <div class="col-xs-3">
+                    ModalSize or modalClass:
+                    <div class="spacer-2rem"></div>
+                    <ui-checkbox [(ngModel)]="modalSize1">auto</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="modalSize4">modal-medium</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="modalSize5">modal-large</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="modalSize12">top-10vh</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="modalSize2">top-20vh</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="modalSize3">top-30vh</ui-checkbox>
+                </div>
+                <div class="col-xs-5">
+                    ModalSizeBodyHeight: (default 50vh)
+                    <div class="spacer-2rem"></div>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight9">small</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight10">medium</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight11">large</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight6">modal-body-v25</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight7">modal-body-v50</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="ModalSizeBodyHeight8">modal-body-v75</ui-checkbox>
+
+                </div>
+
+                <div class="col-xs-3">
+                    More options:
+                    <div class="spacer-2rem"></div>
+                    <ui-checkbox [(ngModel)]="option1">closeOnEscape</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="option4">showFooter</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="showHeader">showHeader</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="hideBorderTop">hideBorderTop</ui-checkbox>
+                    <ui-checkbox [(ngModel)]="option3">hideCloseButton</ui-checkbox>
+
+                </div>
+            </div>
+
+
+            <div class="spacer-2rem"></div>
+            <ui-button type="standard" (click)="dasModal.open()">Open Modal</ui-button>
+            <ui-modal #dasModal modalSize="{{ getModalsize() }}" modalSizeBodyHeight="{{ getModalSizeBodyHeight() }}" [closeOnEscape]="option1"
+                [closeOnOutsideClick]="option2" [hideCloseButton]="option3" [showFooter]="option4" [showHeader]="showHeader"
+                [hideBorderTop]="hideBorderTop">
+                <div modal-header>
+                    <h3>I am the header</h3>
+                </div>
+                <div modal-content>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <p>I am the body of the modal</p>
+                    <ui-form-select
+                        label="My Label"
+                        labelPosition="top"
+                        [options]="options"
+                        ignoreBodyScroll
+                        search>
+                    </ui-form-select>
+                </div>
+                <div modal-footer>
+                    <p>I am the footer of the modal</p>
+                </div>
+            </ui-modal>
+            <div class="spacer-2rem"></div>
+            <ui-button type="standard" (click)="modal2.open()">Open Modal with A lot of content</ui-button>
+            <ui-modal #modal2 modalSize="{{ getModalsize() }}" modalSizeBodyHeight="{{ getModalSizeBodyHeight() }}" [closeOnEscape]="option1"
+                [closeOnOutsideClick]="option2" [hideCloseButton]="option3" [showFooter]="option4" [showHeader]="showHeader"
+                [hideBorderTop]="hideBorderTop">
+                <div modal-header>
+                    <h3>I am the header</h3>
+                </div>
+                <div modal-content>
+                    <form class="form-horizontal align-labels-left ng-pristine ng-invalid ng-touched" novalidate="" validate="" ng-reflect-form="[object Object]">
+                        <div class="modal-body max-height-49vh">
+                            <p>To create a new challenge, select one of the available challenge types. Review the details about
+                                the type of challenge once selected. To continue, enter a name for your challenge and select
+                                Next. </p>
+                            <div class="grid-2-col narrow">
+                                <label for="type">Type</label>
+                                <br>
+                                <span class="dropdown">
+                                    <select id="type" required="">
+                                        <option value="" ng-reflect-value="">Select One</option>
+                                       
+                                        <option value="1" ng-reflect-value="1">
+                                            Steps
+                                        </option>
+                                        <option value="2" ng-reflect-value="2">
+                                            Weight Loss
+                                        </option>
+                                        <option value="3" ng-reflect-value="3">
+                                            Cardio
+                                        </option>
+                                        <option value="4" ng-reflect-value="4">
+                                            Fruits &amp; Veggies
+                                        </option>
+                                        <option value="5" ng-reflect-value="5">
+                                            Distance
+                                        </option>
+                                        <option value="6" ng-reflect-value="6">
+                                            Water Consumption
+                                        </option>
+                                        <option value="7" ng-reflect-value="7">
+                                            Fried Food
+                                        </option>
+                                        <option value="8" ng-reflect-value="8">
+                                            Turning Off Electronics
+                                        </option>
+                                        <option value="9" ng-reflect-value="9">
+                                            Friendly Greeting
+                                        </option>
+                                        <option value="10" ng-reflect-value="10">
+                                            Stretching
+                                        </option>
+                                        <option value="11" ng-reflect-value="11">
+                                            Reduce Sugar
+                                        </option>
+                                        <option value="12" ng-reflect-value="12">
+                                            Increase Activity
+                                        </option>
+                                        <option value="13" ng-reflect-value="13">
+                                            Healthy Seeds and Nuts
+                                        </option>
+                                        <option value="14" ng-reflect-value="14">
+                                            Eye Health
+                                        </option>
+                                        <option value="15" ng-reflect-value="15">
+                                            Time Management
+                                        </option>
+                                        <option value="16" ng-reflect-value="16">
+                                            Posture
+                                        </option>
+                                        <option value="17" ng-reflect-value="17">
+                                            Skipping Meals
+                                        </option>
+                                    </select>
+                                    <i class="viverae-icon-font icon-directional_caret-down"></i>
+                                </span>
+                            </div>
+                           
+                            <div>
+                                
+                            </div>
+                            <div>
+                                <label>Description</label>
+                                <div>
+                                    <p class="p1">Keeping your sugar cravings&nbsp; in check is important to your overall health. This
+                                        challenge is designed to help you reduce your sugar intake. &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp;</p>
+                                    <p class="p1">Examples of high-sugar foods* include:</p>
+                                    <ul>
+                                        <li>Cookies</li>
+                                        <li>Cakes</li>
+                                        <li>Pies</li>
+                                        <li>Donuts</li>
+                                        <li>Brownies</li>
+                                        <li>Candy</li>
+                                        <li>Pudding</li>
+                                        <li>Ice Cream</li>
+                                    </ul>
+                                    <p class="p1">Examples of high-sugar drinks* include:</p>
+                                    <ul>
+                                        <li>Non-diet sodas</li>
+                                        <li>Kool-Aid®</li>
+                                        <li>Fruit juice</li>
+                                        <li>Sweet tea</li>
+                                        <li>Lattes and cappuccinos</li>
+                                        <li>Energy drinks (e.g., Gatorade®)</li>
+                                        <li>Lemonade</li>
+                                    </ul>
+                                    <p>&nbsp;</p>
+                                    <p class="p1">*Sugar-free foods, drinks, and artificial (“non-nutritive”) sweeteners such as Equal®,
+                                        SPLENDA®, or NutraSweet® are permitted.</p>
+                                </div>
+                            </div>
+                            <!--bindings={
+                  "ng-reflect-ng-if": "[object Object]"
+                }-->
+                            <div>
+                                <label>Rules</label>
+                                <div>
+                                    <p>Award yourself 1 point for each day you avoid eating or drinking any high-sugar foods
+                                        or beverages.</p>
+                                    <p>Daily max points: one per day</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button class="button button-standard button-disabled" type="submit" ng-reflect-klass="button button-standard" ng-reflect-ng-class="[object Object]">Next
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+                <div modal-footer>
+                    <p>I am the footer of the modal</p>
+                </div>
+            </ui-modal>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <gh-gist src="https://gist.github.com/codyw9524/c3e5296fbeaea5e5e35383cbb9a8eae8.js"></gh-gist>
+            <div class="spacer-2rem"></div>
+
+
+
+            <!-- <h3 class="nomargin">Custom Content</h3>
+            <hr class="secondary">
+            <h6>
+                To provide custom content use the correct attribute on the container element. 'modal-content' is always needed, however 'modal-header'
+                and 'modal-footer' are optional.
+            </h6>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <gh-gist src="https://gist.github.com/codyw9524/c3e5296fbeaea5e5e35383cbb9a8eae8.js"></gh-gist>
+            <div class="spacer-2rem"></div> -->
+
+
+
+            <h3 class="nomargin">Non-Custom Content</h3>
+            <hr class="secondary">
+            <h6>
+                The built in header and footer can be used with the approprate inputs.
+            </h6>
+            <div class="spacer-2rem"></div>
+            <ui-button type="standard" (click)="myModal2.open()">Open Modal</ui-button>
+            <ui-modal #myModal2 modalSize="auto" title="My Default Title" submitButtonLabel="Save" submitButtonStyle="green" cancelButtonLabel="Cancel">
+
+                <div modal-content>
+                    <p>I am always custom content</p>
+                </div>
+
+            </ui-modal>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <gh-gist src="https://gist.github.com/codyw9524/dc47553246f7a32a7b7ee1e1265922ae.js"></gh-gist>
+            <div class="spacer-2rem"></div>
+
+
+            <h3 class="nomargin">Events</h3>
+            <hr class="secondary">
+            <h6>Use when you need to execute code on submit, close, or open.</h6>
+            <div class="spacer-2rem"></div>
+            <ui-button type="standard" (click)="myModal3.open()">Open Modal</ui-button>
+            <ui-modal #myModal3 modalSize="auto" title="Events For All Ages" submitButtonLabel="Save" cancelButtonLabel="Cancel" (onClose)="close()"
+                (onOpen)="open()" (onSubmit)="submit()" (onCancel)="cancel()">
+                <div modal-content>
+                    <p>I am always custom content</p>
+                    <button (click)="myModal3.close()">close manually</button>
+                </div>
+            </ui-modal>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <gh-gist src="https://gist.github.com/codyw9524/b3a06f11e987c4a22ecae3541e62c073.js"></gh-gist>
+            <div class="spacer-2rem"></div>
+        </div>
+    </div>
+</section>

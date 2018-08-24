@@ -1,0 +1,77 @@
+<section>
+    <div class="row nomargin">
+
+        <styleguide-view-details title="Progress Indicators">
+            <div details-overview>
+                <p>Displays a list of items to navigate in a list of components</p>
+            </div>
+            <div details-usage>
+                <p>Define a type (pages or steps) and a totalItems (number)</p>
+            </div>
+            <div details-behavior>
+                the component has a @Output('onSelectItem') which emit the item number when you click a page or step.
+            </div>
+        </styleguide-view-details>
+
+    </div>
+
+
+    <!-- Example usage -->
+    <div class="row nomargin-bottom">
+        <div class="col-xs-12">
+            <div class="spacer-2rem"></div>
+            <h3 class="nomargin">Example:</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ui-progress-indicator type="pages" [totalItems]="8"></ui-progress-indicator>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-progress-indicator type="pages" [totalItems]="8"&gt;&lt;/ui-progress-indicator&gt;</pre>
+                    </div>
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="row">
+
+                    <div class="col-xs-12 ">
+                        <ui-progress-indicator type="pages" [totalItems]="8" theme="purple"></ui-progress-indicator>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-progress-indicator type="pages" [totalItems]="8" theme="purple" &gt;&lt;/ui-progress-indicator&gt;</pre>
+                    </div>
+                </div>
+
+            </div>
+            <div class="spacer-2rem"></div>
+            <div class="spacer-2rem"></div>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ui-progress-indicator type="steps" [totalItems]="8" label="Label Test"></ui-progress-indicator>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html"> &lt;ui-progress-indicator type="steps" [totalItems]="8" label="Label Test"&gt;&lt;/ui-progress-indicator&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>

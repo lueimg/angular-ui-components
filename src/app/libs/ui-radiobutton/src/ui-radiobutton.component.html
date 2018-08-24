@@ -1,0 +1,8 @@
+<div class="radio-button {{display}}">
+  <input #radioInput type="radio" name="{{groupName}}" id="{{id}}" [attr.tabindex]="tabindex"
+    [value]="value" [checked]="checked" (change)="onChanges()">
+  <label for="{{id}}" #radioLabel  (click)="select()">
+    <ng-content></ng-content>
+  </label>
+  <br>
+</div>

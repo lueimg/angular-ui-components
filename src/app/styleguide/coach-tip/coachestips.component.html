@@ -1,0 +1,97 @@
+<section>
+
+    <styleguide-view-details title="Coach Tip">
+        <div details-overview>
+            <p>Displays a pulse dot clickable which will show an overlay layer with a title and message</p>
+            <p>Available positions:
+                <b> [position]= place-right, place-left, place-top, place-bottom</b>
+            </p>
+            <p>Available size:
+                <b>[size] = '' , 'large'</b>
+            </p>
+        </div>
+        <div details-usage>
+            <p>Use near any element or component</p>
+        </div>
+        <div details-behavior>
+            Click on "Don't show me tips will save a local storage item by CoachTipsService"
+        </div>
+    </styleguide-view-details>
+
+
+    <!-- Example usage -->
+    <div class="row nomargin-bottom">
+        <div class="col-xs-12">
+            <div class="spacer-2rem"></div>
+            <h3 class="nomargin">Example:</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-9 ">
+                    </div>
+                    <div class="col-xs-3 ">
+                        <ui-coach-tip title="Test Title" message="Test Message." size="large"></ui-coach-tip>
+                        <button class="button button-standard small">standard</button>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-coach-tip title="Test Title" message="Test Message." <b>size="large"</b> &gt;&lt;/ui-coach-tip&gt;</pre>
+                    </div>
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="row">
+                    <div class="col-xs-6 ">
+                    </div>
+                    <div class="col-xs-3 ">
+                        <ui-coach-tip [title]="'Health Tracker'" position="place-top" [message]="'Find out what your numbers reveal and continue building your health profile.'">
+                        </ui-coach-tip>
+                        <span>Coaches tip</span>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-coach-tip title="Health Tracker" message="Find out what your numbers reveal and continue building your health profile."  <b>position="place-top"</b> &gt;&lt;/ui-coach-tip&gt;</pre>
+                    </div>
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="row">
+                    <div class="col-xs-3 ">
+                    </div>
+                    <div class="col-xs-3 ">
+                        <ui-coach-tip title="Health Tracker" position="place-bottom" message="Making progress? Let\'s update your numbers."></ui-coach-tip>
+                        <span>Coaches tip</span>
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-coach-tip  <b>position="place-bottom"</b> title="Health Tracker"  message="Making progress? Let\'s update your numbers." &gt;&lt;/ui-coach-tip&gt;</pre>
+                    </div>
+
+
+
+
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="row">
+                    <div class="col-xs-3 ">
+                        <ui-coach-tip title="Health Tracker" [message]="'Making progress? Let\'s update your numbers.'" position="place-right"> </ui-coach-tip>
+                        <div>
+                            Coaches tip
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html">&lt;ui-coach-tip  [title]="'Test'" [message]="'Test Mesasge'" <b>position="place-right"</b> &gt;&lt;/ui-coach-tip&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>

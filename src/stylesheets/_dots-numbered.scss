@@ -1,0 +1,64 @@
+.dots-numbered {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	list-style-type: none;
+	li {
+		margin-right: 10px;
+		float: left;
+		a {
+			display: block;
+			width: 24px;
+			height: 24px;
+			margin-top: 8px;
+			border: 1px solid $color-primary-grey-light;
+			border-radius: 50%;
+			color: $color-primary-grey-light;
+			font-size: 1rem;
+			line-height: 24px;
+			text-align: center;
+			text-decoration: none;
+			transition: all 0.4s ease-in-out 0s;
+
+			&.active {
+				width: 36px;
+				height: 36px;
+				margin-top: 0;
+				border: 1px solid $light-blue-text;
+				color: $light-blue-text;
+				font-size: 1.2rem;
+				line-height: 36px;
+				transition: all 0.4s ease-in-out 0s;
+			}
+		}
+	}
+}
+
+.dots-numbered {
+	display: flex;
+	justify-content: flex-end;
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+
+.align-items-baseline {
+	display: flex;
+	align-items: baseline;
+}
+
+// Responsive ==================================
+// Custom, iPhone Retina
+@media only screen and (max-width : 319px) {
+	.dots-numbered {
+		li {
+			margin-right: 5px;
+		}
+		li:last-child {
+			margin-right: 0;
+		}
+	}
+}

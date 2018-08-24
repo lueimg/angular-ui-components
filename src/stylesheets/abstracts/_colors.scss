@@ -1,0 +1,71 @@
+$app-link-text-color: #8f8f8f;
+$app-border-color: #e1e1e1;
+$app-text-color-light: rgba(255, 255, 255, .87);
+
+// Defaults
+$white: #fff;
+$black: #000;
+$green: #7bc24d;
+$error: #d70036;
+$purple: #7d3087;
+$red: #ff0000;
+$red-dark: #940606;
+
+// Themed Color Palette
+$color-primary-blue: #05a6df;
+$color-primary-green: #7bc24d;
+$color-primary-purple: #914799;
+$color-primary-orange: #fa8d29;
+$color-primary-grey-light: #b2b3b2;
+$color-primary-grey-dark: #303233;
+$color-primary-grey-medium: #78787b;
+$color-primary-grey-xtralight: #dcdad6;
+$color-primary-grey-xxtralight: #ebebeb;
+
+// grays
+$color-grey-one: #d0d0d0;
+$color-grey-two: #f0f0f0;
+$color-grey-three: #f7f7f7;
+$color-grey-four: #9b9b9b;
+
+$base-background-color: $color-grey-two;
+
+// Symantic color variables
+$body-background: $color-grey-two;
+$color-theme-primary: $color-primary-blue;
+$color-theme-secondary: $color-primary-purple;
+$extra-light-gray-text: $color-primary-grey-xtralight;
+$lighter-gray-text: #a3a4a3;
+$light-gray-text: $color-primary-grey-light;
+$medium-lighter-gray-text: #656568;
+$medium-gray-text: $color-primary-grey-medium;
+$dark-gray-text: $color-primary-grey-dark;
+$gray-medium: $color-primary-grey-xtralight;
+$gray-darker-medium: $color-primary-grey-medium;
+
+// blacks
+$medium-black-text: #4a4a4a;
+$darker-black-text: #1b1c1d;
+$base-text-color: $color-primary-grey-dark;
+$inverted-text-color: $white;
+
+// blues
+$light-blue-text: $color-primary-blue;
+$medium-blue-text: #007aa3;
+$darker-blue-text: #004d66;
+
+// FORM COLORS
+$form-error-background-color: #f8f9c8;
+$form-error-border-color: #ffba37;
+$form-error-text-color: #ff0;
+
+$color-success: #6ab93d;
+$color-alert: #f67920;
+$color-warning: #f2c008;
+
+$btn-default-color-hover: $medium-blue-text;
+$btn-default-background-color-hover: $white;
+$btn-default-border-color-hover: $medium-blue-text;
+
+$color-primary-hover: darken(saturate(adjust-hue($color-primary-blue, -0.5960), 4.3860), 12.7451);
+$color-secondary-hover: darken(saturate(adjust-hue($color-primary-purple, -1.0316), 0.8162), 11.9608);

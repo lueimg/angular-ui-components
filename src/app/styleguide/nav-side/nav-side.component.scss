@@ -1,0 +1,63 @@
+@import '../../../stylesheets/abstracts/base.scss';
+
+.nav-side {
+    // margin-top: 30px;
+    width: max-content;
+    font-family: $font-primary;
+    padding-right: 30px;
+	> ul {
+		position: relative;
+		margin-left: -40px;
+		li {
+			padding: 13px 0 12px 37px;
+			transition: border-left 0.25s ease 0s;
+			border-left: 3px solid $white;
+			color: $light-gray-text;
+			font-size: 1.2rem;
+			text-decoration: none;
+			&:first-of-type {
+				margin-top: 1rem;
+            }
+		}
+		> li:hover {
+			transition: border-left 0.25s ease 0s;
+            border-left: 3px solid $color-grey-one;
+            color: $medium-gray-text;
+			cursor: pointer;
+			> ul.nav-side-sub {
+				opacity: 1;
+			}
+		}
+		> li.ui-active, li.active {
+			transition: border-left 0.25s ease 0s;
+			border-left: 3px solid $color-primary-blue;
+			color: $color-primary-blue;
+		}
+	}
+
+	ul {
+		.nav-side-sub {
+			position: relative;
+			opacity: 0;
+			height: auto;
+			max-height: 0;
+			overflow: hidden;
+			li {
+				padding: 5px 0 5px 15px;
+				transition: color 0.25s ease 0s;
+				color: $light-gray-text;
+				font-size: 1rem;
+				text-decoration: none;
+				&:hover {
+					color: $color-primary-blue;
+				}
+			}
+			&.active {
+				opacity: 1;
+				height: auto;
+				overflow: hidden;
+				max-height: 10000px;
+			}
+		}
+	}
+}

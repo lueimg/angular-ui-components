@@ -1,0 +1,56 @@
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+    selector: 'styleguideFullscreenModalInRouteComponent',
+    template: `
+        <ui-fullscreen-modal #fullscreenModal 
+                            title="Fullscreen Modal w/ Footer"
+                            position="not-fixed" [closeCallback]="getCallback()" [power]="true">
+             <div modal-body>
+                <div class="row nopadding article-content">
+                    <div class="col-xs-12">
+                        <!----><div class="no-links">       <h1> High Cholesterol: The TLC Diet </h1> <section><div class="HwNavigationSection"> <div class="HwCspNewspaperLayout"><p class="HwCspTopicImage"><img alt="" height="217" src="https://content.healthwise.net/v1/resources/11.6/en-us/media/medical/hw/100442278_csp.jpg" width="227" class="HwCspImage"></p><h3 class="HwCspSubtitle">What is the TLC diet?</h3><p class="HwCspParagraph">The TLC (Therapeutic Lifestyle Changes) diet is one of several heart-healthy diets that can lower cholesterol and help lower your risk of heart disease or stroke. When you follow this diet, you eat less fat and change the types of fats you eat. You also eat fewer foods that have cholesterol. This diet is part of the TLC program, which also includes being active and staying at a healthy weight to lower cholesterol.</p><p class="HwCspParagraph">The TLC diet means that:</p><ul><li class="HwCspListItem"><div class="HwCspListText">You get 25% to 35% of your daily calories from fat, mainly from unsaturated fat. These fats include canola, olive, peanut, safflower, sunflower, and corn oils. </div></li><li class="HwCspListItem"><div class="HwCspListText"> You get less than 7% of your daily calories from saturated fat. These fats include butter, shortening, and fat found in animal and dairy products.</div></li><li class="HwCspListItem"><div class="HwCspListText">You eat no more than 200 milligrams (mg) of cholesterol a day. Cholesterol is found in foods such as egg yolks, poultry, red meat, dairy products, and shellfish.</div></li><li class="HwCspListItem"><div class="HwCspListText">You avoid trans fat. Foods with trans fats include some vegetable shortening, crackers, cookies, and packaged snack foods.</div></li></ul><p class="HwCspParagraph">Many people whose cholesterol is high because they eat too many fatty foods are able to lower their cholesterol by changing what they eat.</p></div><div class="HwCspWideLayout"><h3 class="HwCspSubtitle">How do you follow the TLC diet?</h3><p class="HwCspParagraph">Use the following table to learn how to choose foods for the TLC diet.</p><table class="HwCspTableProsAndCons"><thead><tr><th colspan="2" class="HwCspTableTitle">TLC diet recommendations </th></tr><tr><td><p>Food group</p></td><td><p>Serving size and what to eat</p></td></tr></thead><tbody><tr><td>Lean meat, poultry, fish, dry beans, and dry peas </td><td><ul><li class="HwCspListItem"><div class="HwCspListText">Eat no more than 5 ounces a day of lean meat, skinless poultry, or fish.</div></li><li class="HwCspListItem"><div class="HwCspListText">Use ½ cup cooked beans or peas instead of 2 ounces of meat.</div></li></ul></td></tr></tbody></table><table class="HwCspTableProsAndCons"><thead><tr><td><p>Food group</p></td><td><p>Serving size and what to eat</p></td></tr></thead><tbody><tr><td>Low-fat milk and milk products </td><td>Get 2 to 3 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 cup fat-free or 1% milk </div></li><li class="HwCspListItem"><div class="HwCspListText">1 cup nonfat or low-fat yogurt </div></li><li class="HwCspListItem"><div class="HwCspListText">1 ounce nonfat or low-fat cheese </div></li></ul></td></tr><tr><td>Eggs</td><td><ul><li class="HwCspListItem"><div class="HwCspListText">Eat no more than 2 yolks a week. </div></li><li class="HwCspListItem"><div class="HwCspListText">Egg whites or substitutes are not limited.</div></li></ul></td></tr><tr><td>Fruits</td><td>Get 2 to 4 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 piece of fruit, such as an apple or orange</div></li><li class="HwCspListItem"><div class="HwCspListText"> 1 cup berries or melon </div></li><li class="HwCspListItem"><div class="HwCspListText"> ½ cup canned fruit or ¾ cup fruit juice</div></li></ul></td></tr><tr><td>Vegetables</td><td>Get 3 to 5 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 cup raw leafy greens </div></li><li class="HwCspListItem"><div class="HwCspListText">½ cup cooked or raw vegetables </div></li><li class="HwCspListItem"><div class="HwCspListText"> ¾ cup vegetable juice</div></li></ul></td></tr><tr><td>Bread, cereals, pasta, rice, and other grains </td><td><p>Get at least 6 servings a day.</p><ul><li class="HwCspListItem"><div class="HwCspListText">1 slice of bread or ½ hot dog or hamburger bun, bagel, or English muffin </div></li><li class="HwCspListItem"><div class="HwCspListText">1 ounce cold cereal </div></li><li class="HwCspListItem"><div class="HwCspListText">½ cup cooked pasta, rice, or other grains</div></li></ul></td></tr><tr><td>Sweets and snacks </td><td>Choose snacks that are low in fat or are made with unsaturated fat. </td></tr></tbody></table></div></div></section>  </div>
+                        <div class="spacer-100"></div>
+                    </div>
+                    <div class="col-xs-12">
+                        <!----><div class="no-links">       <h1> High Cholesterol: The TLC Diet </h1> <section><div class="HwNavigationSection"> <div class="HwCspNewspaperLayout"><p class="HwCspTopicImage"><img alt="" height="217" src="https://content.healthwise.net/v1/resources/11.6/en-us/media/medical/hw/100442278_csp.jpg" width="227" class="HwCspImage"></p><h3 class="HwCspSubtitle">What is the TLC diet?</h3><p class="HwCspParagraph">The TLC (Therapeutic Lifestyle Changes) diet is one of several heart-healthy diets that can lower cholesterol and help lower your risk of heart disease or stroke. When you follow this diet, you eat less fat and change the types of fats you eat. You also eat fewer foods that have cholesterol. This diet is part of the TLC program, which also includes being active and staying at a healthy weight to lower cholesterol.</p><p class="HwCspParagraph">The TLC diet means that:</p><ul><li class="HwCspListItem"><div class="HwCspListText">You get 25% to 35% of your daily calories from fat, mainly from unsaturated fat. These fats include canola, olive, peanut, safflower, sunflower, and corn oils. </div></li><li class="HwCspListItem"><div class="HwCspListText"> You get less than 7% of your daily calories from saturated fat. These fats include butter, shortening, and fat found in animal and dairy products.</div></li><li class="HwCspListItem"><div class="HwCspListText">You eat no more than 200 milligrams (mg) of cholesterol a day. Cholesterol is found in foods such as egg yolks, poultry, red meat, dairy products, and shellfish.</div></li><li class="HwCspListItem"><div class="HwCspListText">You avoid trans fat. Foods with trans fats include some vegetable shortening, crackers, cookies, and packaged snack foods.</div></li></ul><p class="HwCspParagraph">Many people whose cholesterol is high because they eat too many fatty foods are able to lower their cholesterol by changing what they eat.</p></div><div class="HwCspWideLayout"><h3 class="HwCspSubtitle">How do you follow the TLC diet?</h3><p class="HwCspParagraph">Use the following table to learn how to choose foods for the TLC diet.</p><table class="HwCspTableProsAndCons"><thead><tr><th colspan="2" class="HwCspTableTitle">TLC diet recommendations </th></tr><tr><td><p>Food group</p></td><td><p>Serving size and what to eat</p></td></tr></thead><tbody><tr><td>Lean meat, poultry, fish, dry beans, and dry peas </td><td><ul><li class="HwCspListItem"><div class="HwCspListText">Eat no more than 5 ounces a day of lean meat, skinless poultry, or fish.</div></li><li class="HwCspListItem"><div class="HwCspListText">Use ½ cup cooked beans or peas instead of 2 ounces of meat.</div></li></ul></td></tr></tbody></table><table class="HwCspTableProsAndCons"><thead><tr><td><p>Food group</p></td><td><p>Serving size and what to eat</p></td></tr></thead><tbody><tr><td>Low-fat milk and milk products </td><td>Get 2 to 3 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 cup fat-free or 1% milk </div></li><li class="HwCspListItem"><div class="HwCspListText">1 cup nonfat or low-fat yogurt </div></li><li class="HwCspListItem"><div class="HwCspListText">1 ounce nonfat or low-fat cheese </div></li></ul></td></tr><tr><td>Eggs</td><td><ul><li class="HwCspListItem"><div class="HwCspListText">Eat no more than 2 yolks a week. </div></li><li class="HwCspListItem"><div class="HwCspListText">Egg whites or substitutes are not limited.</div></li></ul></td></tr><tr><td>Fruits</td><td>Get 2 to 4 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 piece of fruit, such as an apple or orange</div></li><li class="HwCspListItem"><div class="HwCspListText"> 1 cup berries or melon </div></li><li class="HwCspListItem"><div class="HwCspListText"> ½ cup canned fruit or ¾ cup fruit juice</div></li></ul></td></tr><tr><td>Vegetables</td><td>Get 3 to 5 servings a day.<ul><li class="HwCspListItem"><div class="HwCspListText">1 cup raw leafy greens </div></li><li class="HwCspListItem"><div class="HwCspListText">½ cup cooked or raw vegetables </div></li><li class="HwCspListItem"><div class="HwCspListText"> ¾ cup vegetable juice</div></li></ul></td></tr><tr><td>Bread, cereals, pasta, rice, and other grains </td><td><p>Get at least 6 servings a day.</p><ul><li class="HwCspListItem"><div class="HwCspListText">1 slice of bread or ½ hot dog or hamburger bun, bagel, or English muffin </div></li><li class="HwCspListItem"><div class="HwCspListText">1 ounce cold cereal </div></li><li class="HwCspListItem"><div class="HwCspListText">½ cup cooked pasta, rice, or other grains</div></li></ul></td></tr><tr><td>Sweets and snacks </td><td>Choose snacks that are low in fat or are made with unsaturated fat. </td></tr></tbody></table></div></div></section>  </div>
+                        <div class="spacer-100"></div>
+                    </div>
+                </div>
+            </div>
+        </ui-fullscreen-modal>
+    `,
+    styles: [`
+        .full-screen-example simplywell-header-flex,
+        .full-screen-example component-footer {
+            display: none
+        }
+    `],
+    encapsulation: ViewEncapsulation.None
+})
+export class StyleguideFullscreenModalInRouteComponent implements OnInit, OnDestroy {
+
+    body: HTMLBodyElement;
+    constructor(private router: Router) {
+    }
+
+    ngOnInit(): void {
+        this.body = document.getElementsByTagName('body')[0];
+        this.body.classList.add('full-screen-example');
+    }
+    ngOnDestroy () {
+        this.body.classList.remove('full-screen-example');
+    }
+    
+    getCallback () {
+        // return a function with all data binding to current component
+        const callback = () => {
+            this.router.navigate(['/styleguide/fullscreen-modal']);
+            return false;
+            
+        }
+        return callback;
+    }
+
+}

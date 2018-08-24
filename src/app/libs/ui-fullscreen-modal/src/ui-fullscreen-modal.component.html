@@ -1,0 +1,17 @@
+<div class="fullscreen-modal panel-full {{ position }} {{ class }} {{ borderTopColor }} {{ power ? 'active': '' }}" *ngIf="power">
+    <div class="container">
+        <div *ngIf="showHeader" class="modal-header">
+            <a *ngIf="backIcon" (click)="back();" class="back-icon">
+                <i class="viverae-icon-font icon-directional_arrow-left"></i>
+            </a>
+            <h2>{{title}}</h2>
+            <a *ngIf="closeIcon" (click)="onClickCloseIcon();" class="close-icon">
+                <i class="viverae-icon-font icon-app_close"></i>
+            </a>
+        </div>
+        <ng-content select="[modal-body]"></ng-content>
+        <div *ngIf="showFooter" class="dock-to-bottom">
+            <ng-content select="[modal-footer]"></ng-content>
+        </div>
+    </div>
+</div>

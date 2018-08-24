@@ -1,0 +1,121 @@
+<section class="loaders">
+
+	<styleguide-view-details title="Data Table">
+		<div details-overview>
+			Displays table based on a Object configuration and an Array of Data
+		</div>
+		<div details-usage>
+			Use as common component to display a simple list of data or you can set up dynamic templates per column
+		</div>
+		<div details-behavior>
+			Once we add a list of data, It will show a pagination of 10 items per each page
+		</div>
+	</styleguide-view-details>
+
+
+	<!-- Begin Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Simple empty Table</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-datatable tableTitle="Table Title" [columnDefinition]="example1" [dataSource]="[]" itemsNotFoundMessage="Items not found"></ui-datatable>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html" [innerHTML]="code0"></pre>
+		</div>
+	</div>
+	<!-- end Example usage -->
+
+
+
+
+	<!-- Begin Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Simple List of data</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-datatable [columnDefinition]="example1" [dataSource]="dataSource" itemsNotFoundMessage="Items not found"></ui-datatable>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html" [innerHTML]="code1"></pre>
+		</div>
+	</div>
+	<!-- end Example usage -->
+
+
+	<!-- Begin Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Custom columns using <b>*displayPropertyTemplate</b> directive</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-datatable [columnDefinition]="example2" [dataSource]="dataSource" itemsNotFoundMessage="Items not found">
+
+				<div *displayPropertyTemplate="let row in 'about'; index as idx">
+					<b>{{ row.about | ellipsis: 400}}</b> 
+				</div>
+
+        	</ui-datatable>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html" [innerHTML]="code2"></pre>
+		</div>
+	</div>
+	<!-- end Example usage -->
+
+
+	<!-- Begin Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Action Column</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-datatable [columnDefinition]="example3" [dataSource]="dataSource" itemsNotFoundMessage="Items not found">
+
+				<div *displayPropertyTemplate="let row in 'actions'; index as idx">
+					<ui-icon name="icon-app_delete" size="icon-xs" (click)="removeRow(row)"></ui-icon>
+				</div>
+
+        	</ui-datatable>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html" [innerHTML]="code3"></pre>
+		</div>
+	</div>
+	<!-- end Example usage -->
+
+</section>

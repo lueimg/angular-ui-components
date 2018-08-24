@@ -1,0 +1,54 @@
+<div class="grid" [ngClass]="tableName">
+  <div #gridHeader class="grid-header mb-2" [hidden]="gridHeader.children.length == 0">
+      <ng-content select="[grid-header]"></ng-content>
+  </div>
+  <div class="grid-content">
+      <div class="ui-table">
+          <div *ngIf="tableTitle" class="table-title">{{ tableTitle }}</div>
+          <div class="table-head row">
+              <div *ngFor="let col of columnDefinition" 
+                    class="ui-table-col" 
+                    [ngClass]="col.class"
+                    [style.flex]="col.flex"
+                    [style.width]="col.width">
+                    <ui-icon *ngIf="col.sortKey && col.sortKey !== sortKey || col.sortKey && col.sortKey === sortKey && sortType === 'desc'" (click)="sortList(col.sortKey, 'asc')" name="icon-directional_caret-down" [style]="'pointer'" size="icon-sm"></ui-icon>
+                    <ui-icon *ngIf="col.sortKey && col.sortKey === sortKey && sortType === 'asc'" (click)="sortList(col.sortKey, 'desc')" name="icon-directional_caret-up" [style]="'pointer'" size="icon-sm"></ui-icon>
+                    <ng-container *ngIf="col.columnHeaderDisplayName">
+                        {{ col.columnHeaderDisplayName }}
+                    </ng-container>
+                    <ng-container *ngIf="col.columnHeaderDisplayName$">
+                        {{ col.columnHeaderDisplayName$ | async }}
+                    </ng-container>
+              </div>
+          </div>
+          <div class="table-body">
+              <div *ngFor="let row of _dataDisplayed; let i = index" class="row table-row" >
+                  <div *ngFor="let col of columnDefinition"
+                        class="ui-table-col {{ col.class }}" 
+                        [ngClass]="{'showOnHoverRow': col.showOnHoverRow }"
+                        [style.flex]="col.flex"
+                        [style.width]="col.width">
+                        <!-- if Template Col -->
+                        <ui-datatable-template-col *ngIf="col.displayProperty && columnTemplates[col.displayProperty]; else rawDisplayProperty"
+                                                    [rowData]="row" 
+                                                    [index]="i + 1" 
+                                                    [template]="columnTemplates[col.displayProperty]">
+                        </ui-datatable-template-col>
+                        <!-- else raw property -->
+                        <ng-template #rawDisplayProperty>{{ row[col.displayProperty] }}</ng-template>
+                  </div>
+              </div>
+              <div *ngIf="!_dataDisplayed.length" class="row table-row">
+                  <div class="ui-table-col col-xs-12">{{ itemsNotFoundMessage }}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div *ngIf=" dataSource.length > limitRows" class="grid-pagination">
+      <li *ngIf="currentPage > 4 && lastPage > 8 " (click)="goTo(1)">1</li>
+      <li *ngIf="currentPage > 4 && lastPage > 9" (click)="goTo(currentPage - 3)">...</li>
+      <li *ngFor="let page of displayedPages" (click)="goTo(page)" [ngClass]="{'active': page === currentPage}">{{page}}</li>
+      <li *ngIf="lastPage - currentPage > 4 && lastPage > 9" (click)="goTo(this.currentPage + 4)">...</li>
+      <li *ngIf="lastPage - currentPage > 4 && lastPage > 8" (click)="goTo(lastPage)">{{ lastPage }}</li>
+  </div>
+</div>

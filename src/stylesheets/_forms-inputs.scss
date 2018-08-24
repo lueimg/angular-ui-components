@@ -1,0 +1,169 @@
+form {
+	.input-group {
+		position: relative;
+		margin-bottom: 45px;
+		input {
+			display: block;
+			width: 100%;
+			padding: 10px 0;
+			border: 0;
+			border-bottom: 1px solid $color-grey-one;
+			font-size: 1rem;
+			&:hover {
+				border-bottom: 1px solid $color-primary-grey-medium;
+			}
+			&.ng-dirty.ng-invalid {
+				border-bottom: 1px solid $error;
+			}
+			&.ng-valid {
+				border-bottom: 1px solid $color-grey-one;
+			}
+			&.large {
+				font-size: 1.2rem;
+			}
+			&.xlarge {
+				font-size: 1.467rem
+			}
+		} 
+		input:focus {
+			outline: none;
+		}
+		// Label
+		label {
+			position: absolute;
+			top: 1rem;
+			left: 0;
+			        transition: 0.2s ease all;
+			color: $color-primary-grey-light;
+			font-size: 1rem;
+			font-weight: normal;
+			pointer-events: none;
+
+			   -moz-transition: 0.2s ease all;
+			-webkit-transition: 0.2s ease all;
+		}
+
+		// Active state
+		input:focus.ng-empty ~ label,
+		input:focus ~ label,
+		input:valid ~ label {
+			top: -12px;
+			left: 0;
+			font-size: 0.9333rem;
+			&.large,
+			&.xlarge {
+				font-size: 0.9333rem;
+			}
+		}
+		input:valid ~ label {
+			color: $color-primary-grey-light;
+		}
+		input:focus ~ label {
+			color: $color-primary-blue !important;
+		}
+		input:focus.ng-invalid ~ label {
+			color: $error !important;
+		}
+	
+		input.ng-empty ~ label {
+			top: 1rem;
+			font-size: 1rem;
+			&.large {
+				font-size: 1.2rem;
+			}
+			&.xlarge {
+				font-size: 1.467rem
+			}
+		}
+
+		// Bottom bars
+		.bar {
+			display: block;
+			position: relative;
+			width: 100%;
+		}
+		.bar::before, .bar::after {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			width: 0;
+			height: 1px;
+			        transition: 0.2s ease all;
+			background: $color-primary-blue;
+
+			   -moz-transition: 0.2s ease all;
+			-webkit-transition: 0.2s ease all;
+		}
+		.bar::before {
+			left: 50%;
+		}
+		.bar::after {
+			right: 50%;
+		}
+
+		// Active
+		input:focus ~ .bar::before, input:focus ~ .bar::after {
+			width: 50%;
+		}
+
+		// Bar with validator
+		input.ng-invalid.ng-dirty ~ .bar::before, input.ng-invalid.ng-dirty ~ .bar::after {
+			background: $error;
+		}
+		input.ng-invalid ~ .bar::before, input.ng-invalid ~ .bar::after {
+			background: $error;
+		}
+
+		// Validation icon
+		i {
+			position: absolute;
+			top: 10px;
+			right: -20px;
+			transition: all 0.25s ease 0s;
+			opacity: 0;
+			color: $color-grey-four;
+		}
+
+		input.ng-valid:focus ~ i {
+			transition: all 0.25s ease 0s;
+			opacity: 1;
+			color: $color-success;
+		}
+	}
+}
+
+.error-message-ani {
+	position: absolute;
+	z-index: -1;
+	top: 20px;
+	width: 100%;
+	height: 40px;
+	transition: top 0.25s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+	opacity: 0;
+	line-height: 40px;
+	.error {
+		min-height: 40px;
+	}
+	.error-message {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0.1s ease 0s;
+		opacity: 0;
+		line-height: 40px;
+
+		&.active {
+			transition: opacity 0.1s ease 0s;
+			opacity: 1;
+		}
+	}
+	&.active {
+		z-index: 1;
+		top: 40px;
+		transition: top 0.35s ease-in-out 0s, opacity 0.35s ease-in-out 0s;
+		opacity: 1;
+	}
+}

@@ -1,0 +1,78 @@
+// Pull in the colors and variables needed
+@import '../../../../stylesheets/abstracts/base';
+
+.loader {
+	text-align: center;
+	margin: 50px auto;
+	animation: fadeIn 0.75s ease-in forwards;
+	> h3 {
+		position: relative;
+		top: 0;
+		margin-bottom: 1rem;
+		animation: fadeUp 1s ease-in forwards;
+		color: $color-primary-grey-medium;
+		text-align: center;
+	}
+	&.small .loader-svg {
+		width: 90px;
+  }
+  &.medium .loader-svg {
+		width: 150px;
+	}
+	&.large .loader-svg {
+		width: 200px;
+	}
+}
+
+.loader-svg {
+	width: 150px;
+	animation: loading 2s linear infinite;
+
+	.loader-svg-circle {
+		animation: loading-circle 4s linear infinite;
+		stroke-width: 6;
+		stroke-linecap: square;
+		stroke-dasharray: 300;
+		stroke-dashoffset: 0;
+		stroke: $color-primary-blue;
+		fill: transparent;
+		stroke-miterlimit: 10;
+	}
+}
+
+@keyframes fadeUp {
+	0% {
+		top: 15px;
+		opacity: 0;
+	}
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes loading-circle {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: -600;
+	}
+}

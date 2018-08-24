@@ -1,0 +1,57 @@
+// DO NOT COMB
+.loading {
+	animation: clockwise .85s linear infinite;
+	display: block;
+	height: 100px;
+	position: relative;
+	width: 100px;
+	margin-top: 30px;
+}
+
+.loading,
+.loading:before,
+.loading:after {
+	border: 2px solid transparent;
+	border-radius: 50%;
+	border-top-color: rgba($black,0.6);
+	margin: auto;
+}
+
+.loading:before,
+.loading:after {
+	content: '';
+	position: absolute;
+}
+
+.loading:before {
+	animation: anticlockwise .5s linear infinite;
+	top: -.6em;
+	right: -.6em;
+	bottom: -.6em;
+	left: -.6em;
+}
+
+.loading:after {
+	animation: anticlockwise .35s linear infinite;
+	top: .3em;
+	right: .3em;
+	bottom: .3em;
+	left: .3em;
+}
+.loading-container {
+	position: relative;
+}
+.loading-container img  {
+	position: absolute;
+	top: 30px;
+	margin-left: -30px;
+}
+@keyframes clockwise {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes anticlockwise {
+	0% { transform: rotate(360deg); }
+	100% { transform: rotate(0deg); }
+}

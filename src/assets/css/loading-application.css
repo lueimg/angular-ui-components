@@ -1,0 +1,16 @@
+.container-app-loader .pulsate.active {
+	opacity: 1 !important;
+
+	-ms-animation: none !important;
+	    animation: none !important;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* IE10+ CSS styles go here */
+	.container-app-loader .pulsate.active {
+		opacity: 1 !important;
+
+		-ms-animation: none !important;
+		    animation: none !important;
+	}
+}

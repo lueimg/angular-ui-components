@@ -1,0 +1,286 @@
+<section class="loaders">
+    <styleguide-view-details title="Form - Inputs">
+        <div details-overview>
+            <p>Displays as the standard text field within page content and when there are many input fields present.</p>
+            <p>Font colors may be changed for specific usage.</p>
+        </div>
+        <div details-usage>
+            <p>Use for login, data entry, and other forms of information collection.</p>
+        </div>
+        <div details-behavior>
+            <p>Label and color transforms based on the state.</p>
+        </div>
+    </styleguide-view-details>
+
+
+    <form [formGroup]="demoForm" novalidate>
+
+        <!-- Begin Example usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <!-- example title -->
+                <h3 class="nomargin">Input Basic Autofocus:</h3>
+                <div>
+                    Leave and go back the page and see how autofocus runs always
+                </div>
+                <hr class="secondary">
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- live code -->
+                <div class="row nopadding">
+                    <div class="col-xs-12 nopadding-right">
+                        <div class="input-group">
+                            <input type="text" name="input1" id="input1" formControlName="input1" >
+                            <span class="bar"></span>
+                            <label for="input1">HTML Input Basic</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Basic with Autofocus" formControlName="input10" autofocus></ui-input>
+                    </div>
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Basic Component" formControlName="input11" clearIcon></ui-input>
+                    </div>
+                </div>
+                <!-- end live code -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- html code -->
+                <pre class="pre" data-lang="html" [innerHTML]="code1"></pre>
+            </div>
+        </div>
+        <!-- end Example usage -->
+
+
+
+
+
+
+        <!-- Begin Example usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <!-- example title -->
+                <h3 class="nomargin">Input Required</h3>
+                <hr class="secondary">
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- live code -->
+                <div class="row nopadding">
+                    <div class="col-xs-6 nopadding-right">
+                        <div class="input-group">
+                            <input type="text" name="input2" id="input2" formControlName="input2" required>
+                            <span class="bar"></span>
+                            <label for="input2">HTML Input Required
+                                <span class="required">*</span>
+                            </label>
+                            <div class="error-message-ani" [ngClass]="{'active': demoForm.controls.input2.errors && demoForm.controls.input2.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': demoForm.controls['input2'].hasError('required')}">Required...</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Required" formControlName="input22" required>
+                            <div class="error-message-ani" [ngClass]="{'active': input22Field.errors && input22Field.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': input22Field.hasError('required')}">Required...</span>
+                                </p>
+                            </div>
+                        </ui-input>
+                    </div>
+                </div>
+                
+                <!-- end live code -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- html code -->
+                <pre class="pre" data-lang="html" [innerHTML]="code2"></pre>
+            </div>
+        </div>
+        <!-- end Example usage -->
+
+
+
+
+
+
+
+
+        <!-- Begin Example usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <!-- example title -->
+                <h3 class="nomargin">Input Validated</h3>
+                <hr class="secondary">
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- live code -->
+                <div class="row">
+                    <div class="col-xs-6 ">
+                        <div class="input-group">
+                            <input type="text" name="input3" id="input3" formControlName="input3" required>
+                            <i class="viverae-icon-font icon-form_check"></i>
+                            <span class="bar"></span>
+                            <label for="input3">HTML Input Validated
+                                <span class="required">*</span>
+                            </label>
+                            <div class="error-message-ani" [ngClass]="{'active': demoForm.controls.input3.errors && demoForm.controls.input3.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': demoForm.controls['input3'].hasError('required')}">Required....</span>
+                                    <span class="error-message" [ngClass]="{'active': demoForm.controls['input3'].hasError('minlength')}">Must be at least 5 characters</span>
+                                    <span class="error-message" [ngClass]="{'active': demoForm.controls['input3'].hasError('maxlength')}">No more than 15 characters</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Validated" formControlName="input7" required checkIcon>
+                            <div class="error-message-ani" [ngClass]="{'active': input7Field.errors && input7Field.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': input7Field.hasError('required')}">Required....</span>
+                                    <span class="error-message" [ngClass]="{'active': input7Field.hasError('minlength')}">Must be at least 5 characters</span>
+                                    <span class="error-message" [ngClass]="{'active': input7Field.hasError('maxlength')}">No more than 15 characters</span>
+                                </p>
+                            </div>
+                        </ui-input>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+                <!-- end live code -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- html code -->
+                <pre class="pre" data-lang="html" [innerHTML]="code3"></pre>
+            </div>
+        </div>
+        <!-- end Example usage -->
+
+
+
+
+
+
+
+        <!-- Begin Example usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <!-- example title -->
+                <h3 class="nomargin">Input Large</h3>
+                <hr class="secondary">
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- live code -->
+                <div class="row nopadding">
+                    <div class="col-xs-6 nopadding-right">
+                        <div class="input-group">
+                            <input class="large" type="text" name="input4" id="input4" formControlName="input4" required>
+                            <span class="bar"></span>
+                            <label for="input4">HTML Input Large (large)
+                                <span class="required">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Large (large)" formControlName="input8" size="large" required></ui-input>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+                <!-- end live code -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- html code -->
+                <pre class="pre" data-lang="html" [innerHTML]="code4"></pre>
+            </div>
+        </div>
+        <!-- end Example usage -->
+
+
+
+
+
+
+        <!-- Begin Example usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <!-- example title -->
+                <h3 class="nomargin">Input extra Large</h3>
+                <hr class="secondary">
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- live code -->
+                <div class="row ">
+                    <div class="col-xs-6 nopadding-right">
+                        <div class="input-group">
+                            <input class="xlarge" type="text" name="input5" id="input5" formControlName="input5" required>
+                            <span class="bar"></span>
+                            <label for="input5">HTML Input Extra Large (xlarge)
+                                <span class="required">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 nopadding-right">
+                        <ui-input label="UI Input Large (large)" formControlName="input9" size="xlarge" required></ui-input>
+                    </div>
+                </div>
+                <div class="row">
+                   
+                </div>
+                <!-- end live code -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- html code -->
+                <pre class="pre" data-lang="html" [innerHTML]="code5"></pre>
+            </div>
+        </div>
+        <!-- end Example usage -->
+
+    </form>
+</section>

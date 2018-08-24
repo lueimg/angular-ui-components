@@ -1,0 +1,31 @@
+<div class="ui-toasts"
+     [ngClass]="{'active': toastStatus}">
+    <div class="ui-toast"
+         *ngIf="toast"
+         [ngClass]="toast.type">
+        <div class="container">
+            <div class="row nopadding ui-toast-container">
+                <div class="nopadding ui-toast-icon-container">
+                    <i *ngIf="toast.type === 'warning'"class="viverae-icon-font icon-alerts_alert-triangle icon-24"></i>
+                    <i *ngIf="toast.type === 'alert'" class="viverae-icon-font icon-alerts_alert-octagon icon-24"></i>
+                    <i *ngIf="toast.type === 'success'" class="viverae-icon-font icon-form_check icon-24"></i>
+                </div>
+                <div class="ui-toast-message-container">
+                    <p class="message">{{ toast.text }}</p>
+                </div>
+                <div class="nopadding dismiss-container">
+                    <div class="countdown" *ngIf="!toast.dismissable && displayCount >= 1">
+                        <div class="countdown-number" [ngClass]="{'active': toastStatus}">{{ countDown | async }}</div>
+                        <svg>
+                            <circle r="18" cx="20" cy="20" [ngClass]="{'active': toastStatus}"></circle>
+                        </svg>
+                    </div>
+                    <!-- This should only show if there is a CTA or callback -->
+                    <p class="message dismiss"
+                       *ngIf="toast.dismissable"
+                       (click)="dismissToast();">{{ toast.cta }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

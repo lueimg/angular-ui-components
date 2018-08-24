@@ -1,0 +1,674 @@
+<section class="styleguide-content-container">
+
+    <styleguide-view-details title="Datepicker">
+        <div details-overview>
+            Displays when a date must be entered.
+        </div>
+        <div details-usage>
+            Use to provide date selection within a view.
+        </div>
+        <div details-behavior>
+            Click the field to open the calendar. Selecting a date will close the menu and apply the selected date. Clicking outside
+            the calendar will close the calendar. States will mirror the Text Field pattern, where applicable.
+        </div>
+    </styleguide-view-details>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Example: Datepicker with initial value</h3>
+            <hr class="secondary">
+        </div>
+        <div class="spacer-2rem"></div>
+        <div class="spacer-2rem"></div>
+        <div class="col-xs-6">
+            <form [formGroup]="form2">
+                <div>
+                    <ui-datepicker formControlName="datepicker11" [idSelector]="'startDateDate'" [label]="'start Date'" [displayErrorMessages]="true"
+                        required>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker11.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Errors :
+                <b>{{ datepicker11.errors | json }}</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Form valid :
+                <b>{{ form2.valid }}</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Form values :
+                <b>{{ form2.value | json }}</b>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Example: Datepicker with
+                <b>Form validations</b>
+            </h3>
+            <hr class="secondary">
+        </div>
+        <div class="col-xs-12">
+            <h6 class="nomargin">* Datepicker propagates the errors to the form to avoid submit bad dates</h6>
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="form1">
+                <div>
+                    <ui-datepicker formControlName="datepicker" [idSelector]="'startDateDate'" [label]="'start Date'" [displayErrorMessages]="true"
+                        required>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepickerCtrl.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Errors :
+                <b>{{ datepickerCtrl.errors | json }}</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Form valid :
+                <b>{{ form1.valid }}</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Form values :
+                <b>{{ form1.value | json }}</b>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with
+                <b>viewFormat: YYYY-MM-DD</b> (input)</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker4" [idSelector]="'startDateDate'" [label]="'start Date'" [showExample]="true" viewFormat="YYYY-MM-DD"
+                        [displayErrorMessages]="true" required>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker4Ctrl.value }}</b>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with
+                <b>Format: YYYY-MM-DD</b> (returned value)</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm" (submit)="submitForm();">
+                <div>
+                    <ui-datepicker formControlName="datepicker5" [idSelector]="'startDateDate'" [label]="'start Date'" [showExample]="true" format="YYYY-MM-DD"
+                        required>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="spacer-2rem"></div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker5.value }}</b>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-xs-12">
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+            <gh-gist src="https://gist.github.com/codyw9524/82581f8aae30d31dc51cce220e269a91.js"></gh-gist>
+        </div>
+    </div> -->
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker
+                <b>Without</b> Input</h3>
+            <hr class="secondary">
+            <div class="col-xs-6">
+                <form [formGroup]="myForm">
+                    <div>
+                        <ui-datepicker formControlName="datepicker2" [displayInput]="false"></ui-datepicker>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                Value :
+                <b>{{ datepicker2Ctrl.value }}</b>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code snippet:</h4>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+            <gh-gist src="https://gist.github.com/codyw9524/89de507ce652c390e2b01719cdc69477.js"></gh-gist>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with
+                <b>Today</b> Button</h3>
+            <hr class="secondary">
+            <p>Optionally, display a button for selecting the current date within the datepicker</p>
+            <div class="col-xs-6">
+                <form [formGroup]="myForm" [ngStyle]="{'width': '50%'}">
+                    <ui-datepicker formControlName="datepicker3" [todayButton]="true">
+                    </ui-datepicker>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                Value :
+                <b>{{ datepicker3Ctrl.value }}</b>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="spacer-2rem"></div>
+            <h4 class="nomargin">Code Snippet:</h4>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+            <gh-gist src="https://gist.github.com/codyw9524/375513f005d86515ca12650b5dbf1f92.js"></gh-gist>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker
+                <b>always</b> validate viewFormat by default</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker8" label="Date" [displayErrorMessages]="true" [showExample]="true">
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker8.value }}</b>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with
+                <b>Required</b> Error</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker6" [idSelector]="'startDateDate'" [label]="'start Date'" [showExample]="true" required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker6.errors && datepicker6.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker6.hasError('required')}">Required...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker6.value }}</b>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with Custom Message
+                <b>viewFormatValidator</b> Error</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker7" [idSelector]="'startDateDate'" [label]="'start Date'" [showExample]="true" required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker7.errors && datepicker7.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker7.hasError('viewFormatValidator')}">Bad View Format...</span>
+                                <span class="error-message" [ngClass]="{'active': datepicker7.hasError('required')}">Required...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker7.value }}</b>
+        </div>
+        <div class="col-xs-12">
+            Errors :
+            <b>{{ datepicker7.errors | json }}</b>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with Custom Validators </h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker10" [idSelector]="'startDateDate'" [label]="'start Date'" [displayErrorMessages]="true"
+                        [showExample]="true" required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker10.errors && datepicker10.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker10.hasError('customValidation')}">Bad Custom V...</span>
+                                <span class="error-message" [ngClass]="{'active': datepicker10.hasError('viewFormatValidator')}">Bad Format...</span>
+                                <span class="error-message" [ngClass]="{'active': datepicker10.hasError('required')}">Required...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker10.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker10.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with locationPosition fixed </h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker12" [idSelector]="'startDateDate'" [label]="'start Date'" [displayErrorMessages]="true"
+                        [showExample]="true" locationPosition="fixed" required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker12.errors && datepicker12.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker12.hasError('customValidation')}">Bad Custom V...</span>
+                                <span class="error-message" [ngClass]="{'active': datepicker12.hasError('viewFormatValidator')}">Bad Format...</span>
+                                <span class="error-message" [ngClass]="{'active': datepicker12.hasError('required')}">Required...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker12.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker12.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker in Modal</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <ui-button type="standard" (click)="dasModal.open()">Open Modal</ui-button>
+        <ui-modal #dasModal modalSize="auto top-10vh">
+            <div modal-header>
+                <h3>I am the header</h3>
+            </div>
+            <div modal-content>
+                
+                <div class="row">
+                    <div class="col-xs-6">
+                        <form [formGroup]="form2">
+                            <div>
+                                <ui-datepicker 
+                                    formControlName="datepicker11" 
+                                    [idSelector]="'startDateDate'" 
+                                    [label]="'start Date'"
+                                    locationPosition="fixed"
+                                    [showExample]="true"
+                                    required>
+                                    <div class="error-message-ani" [ngClass]="{'active': datepicker11.errors && datepicker11.dirty}">
+                                        <p class="error">
+                                            <span class="error-message" [ngClass]="{'active': datepicker11.hasError('customValidation')}">Bad Custom V...</span>
+                                            <span class="error-message" [ngClass]="{'active': datepicker11.hasError('viewFormatValidator')}">Bad Format...</span>
+                                            <span class="error-message" [ngClass]="{'active': datepicker11.hasError('required')}">Required...</span>
+                                        </p>
+                                    </div>
+                                </ui-datepicker>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-6">
+                        Value :
+                        <b>{{ datepicker11.value }}</b>
+                    </div>
+                </div>
+            </div>
+        </ui-modal>
+    </div>
+
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with Max date 2018-05-12</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker12" [label]="'Date'" [displayErrorMessages]="true" [showExample]="true" [maxDate]="datepicker12MaxDate"
+                        required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker12.errors && datepicker12.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker12.hasError('maxDate')}">Max Date...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker12.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker12.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with Max date 2014-05-12</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <div>
+                    <ui-datepicker formControlName="datepicker13" [label]="'Date'" [displayErrorMessages]="true" [showExample]="true" [maxDate]="datepicker13MaxDate"
+                        required>
+                        <div class="error-message-ani" [ngClass]="{'active': datepicker13.errors && datepicker13.dirty}">
+                            <p class="error">
+                                <span class="error-message" [ngClass]="{'active': datepicker13.hasError('maxDate')}">Max Date...</span>
+                            </p>
+                        </div>
+                    </ui-datepicker>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ datepicker13.value }}</b>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker13.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with
+                <b>shrinkErrorSpace</b>
+            </h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <form [formGroup]="myForm">
+                    <div>
+                        <ui-datepicker formControlName="datepicker14" [label]="'Date'" [shrinkErrorSpace]="true" [showExample]="true" required>
+                            <div class="error-message-ani" [ngClass]="{'active': datepicker14.errors && datepicker14.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': datepicker14.hasError('customValidation')}">Bad Custom V...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker14.hasError('viewFormatValidator')}">Bad Format...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker14.hasError('required')}">Required...</span>
+                                </p>
+                            </div>
+                        </ui-datepicker>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                Value :
+                <b>{{ datepicker14.value }}</b>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker14.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with <b>Reset</b>
+            </h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        .<div class="row">
+            <div class="col-xs-12">
+                <ui-button (click)="reset()">Reset</ui-button>
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>        
+        <div class="row">
+            <div class="col-xs-6">
+                <form [formGroup]="form3">
+                    <div>
+                        <ui-datepicker formControlName="datepicker15" [label]="'Date'" [showExample]="true" required>
+                            <div class="error-message-ani" [ngClass]="{'active': datepicker15?.errors && datepicker15?.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': datepicker15?.hasError('customValidation')}">Bad Custom V...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker15?.hasError('viewFormatValidator')}">Bad Format...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker15?.hasError('required')}">Required...</span>
+                                </p>
+                            </div>
+                        </ui-datepicker>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                Value :
+                <b>{{ datepicker15.value }}</b>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker15.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with <b>set Value</b>
+            </h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+        .<div class="row">
+            <div class="col-xs-12">
+                <ui-button (click)="setValue()">Set value</ui-button>
+            </div>
+        </div>
+        <div class="spacer-2rem"></div>        
+        <div class="row">
+            <div class="col-xs-6">
+                <form [formGroup]="myForm">
+                    <div>
+                        <ui-datepicker formControlName="datepicker16" [label]="'Date'" [showExample]="true" required>
+                            <div class="error-message-ani" [ngClass]="{'active': datepicker16?.errors && datepicker16?.dirty}">
+                                <p class="error">
+                                    <span class="error-message" [ngClass]="{'active': datepicker16?.hasError('customValidation')}">Bad Custom V...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker16?.hasError('viewFormatValidator')}">Bad Format...</span>
+                                    <span class="error-message" [ngClass]="{'active': datepicker16?.hasError('required')}">Required...</span>
+                                </p>
+                            </div>
+                        </ui-datepicker>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                Value :
+                <b>{{ datepicker16.value }}</b>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-xs-12">
+                <div>
+                    Errors : {{ datepicker16.errors | json }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="nomargin">Datepicker with date range selection</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <form [formGroup]="myForm">
+                <ui-datepicker
+                    formControlName="datepicker17"
+                    [selectRange]="true"
+                    [displayInput]="false">
+                </ui-datepicker>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            <p>Value : {{ datepicker17.value | json }}</p>
+        </div>
+    </div>
+
+
+
+    <!--
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="nomargin">Source:</h4>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+            <gh-gist src="https://gist.github.com/codyw9524/793c5d841a8b130271851410e76c2f18.js"></gh-gist>
+            <div class="spacer-2rem"></div>
+            <div class="test">
+                <gh-gist src="https://gist.github.com/codyw9524/9586c3005199d79e40c06e2237df2fac.js"></gh-gist>
+            </div>
+        </div>
+    </div> -->
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+</section>

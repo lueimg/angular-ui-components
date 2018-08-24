@@ -1,0 +1,25 @@
+<div class="styleguide-view-details">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>{{title}}</h2>
+            <p>
+                <ng-content select="[details-overview]"></ng-content>
+            </p>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Usage</h4>
+            <p>
+                <ng-content select="[details-usage]"></ng-content>
+            </p>
+        </div>
+        <div class="col-xs-6">
+            <h4>Behavior</h4>
+            <p>
+                <ng-content select="[details-behavior]"></ng-content>
+            </p>
+        </div>
+    </div>
+</div>

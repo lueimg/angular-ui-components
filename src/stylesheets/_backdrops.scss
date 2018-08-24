@@ -1,0 +1,40 @@
+$color-primary-viverae: #05a6df;
+$color-secondary-viverae: #914799;
+
+.backdrop {
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.5s ease-in-out 0s, top 0s linear 0.5s, z-index 0.5s linear 0.5s;
+	background-color: rgba($white, 0.975);
+	opacity: 0;
+	z-index: -999;
+	&.dark {
+		background-color: rgba($black, 0.75);
+	}
+	&.active {
+		z-index: 999;
+		top: 0;
+		transition: opacity 0.5s ease-in-out 0s;
+		opacity: 0.95;
+	}
+
+	&.secondary {
+		background-color: rgba($color-secondary-viverae, 0.9);
+		color: $white;
+		&.active {
+			opacity: 1;
+		}
+	}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* IE10+ CSS styles go here */
+	.backdrop.active {
+		top: 0 !important;
+		z-index: 1200 !important;
+		transition: none;
+	}
+}

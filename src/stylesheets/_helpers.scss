@@ -1,0 +1,327 @@
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.italic {
+	color: $color-primary-grey-medium !important;
+	font-style: italic;
+}
+.pointer {
+	cursor: pointer;
+}
+
+.abstract {
+	background-color: rgba(pink, 0.75);
+}
+
+.underline-success {
+	border-bottom: 2px solid $color-success;
+}
+
+.underline-warning {
+	border-bottom: 2px solid $color-warning;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.nopadding {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.nopadding-only {
+	padding: 0 !important;
+}
+
+.nomargin {
+	margin: 0 !important;
+}
+
+.nomargin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.nomargin-top {
+	margin-top: 0 !important;
+}
+
+.nopadding-left {
+	padding-left: 0;
+}
+
+.nopadding-right {
+	padding-right: 0;
+}
+
+.nopadding-top {
+	padding-top: 0;
+}
+.nopadding-bottom {
+	padding-bottom: 0;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-white {
+	color: $white !important;
+}
+.text-blue {
+	color: $color-primary-blue !important;
+}
+.text-grey {
+	color: $color-primary-grey-medium !important;
+}
+.text-black {
+	color: $black !important;
+}
+.text-success {
+	color: $color-success;
+}
+.text-alert {
+	color: $color-alert;
+}
+.text-warning {
+	color: $color-warning;
+}
+
+// Mainly to get icons aligned vertically with text
+.align-vert-middle {
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+.text-orange {
+	color: $color-primary-orange;
+}
+
+// Font size exceptions
+.font-8px {
+	font-size: 0.5333rem;
+}
+.font-9px {
+	font-size: 0.6rem;
+}
+.font-10px {
+	font-size: 0.6667rem;
+}
+.font-11px {
+	font-size: 0.7333rem;
+}
+.font-12px {
+	font-size: 0.8rem;
+}
+.font-13px {
+	font-size: 0.8667rem;
+}
+.font-14px {
+	font-size: 0.9333rem;
+}
+.font-15px {
+	font-size: 1rem;
+}
+.font-16px {
+	font-size: 1.067rem;
+}
+.font-18px {
+	font-size: 1.2rem;
+}
+.font-20px {
+	font-size: 1.333rem;
+}
+.font-22px {
+	font-size: 1.467rem;
+}
+.font-24px {
+	font-size: 1.6rem;
+}
+.font-26px {
+	font-size: 1.733rem;
+}
+.font-28px {
+	font-size: 1.867rem;
+}
+.font-30px {
+	font-size: 2rem;
+}
+.font-32px {
+	font-size: 2.133rem;
+}
+.font-34px {
+	font-size: 2.267rem;
+}
+.font-36px {
+	font-size: 2.4rem;
+}
+.font-38px {
+	font-size: 2.533rem;
+}
+.font-40px {
+	font-size: 2.667rem;
+}
+
+.font-thin {
+	font-family: $font-primary-thin;
+}
+.font-light {
+	font-family: $font-primary-light;
+}
+.font-reg {
+	font-family: $font-primary;
+}
+.bold {
+	font-weight: bold;
+}
+
+.timestamp {
+	color: $lighter-gray-text;
+	font-family: $font-primary-light;
+	font-size: 1rem;
+	font-style: italic;
+	line-height: 2.5rem;
+}
+
+.icon-20 {
+	font-size: 1.333rem;
+}
+.icon-24 {
+	font-size: 1.6rem;
+}
+.icon-32 {
+	font-size: 2.133rem;
+}
+.icon-48 {
+	font-size: 3.2rem;
+}
+.icon-64 {
+	font-size: 4.267rem;
+}
+.icon-128 {
+	font-size: 8.533rem;
+}
+
+.icon-xs {
+	font-size: 1rem; // 15px
+}
+.icon-sm {
+	font-size: 1.333rem; // 20 px
+}
+.icon-md {
+	font-size: 1.6rem; // 24px
+}
+.icon-lg {
+	font-size: 2.133rem; // 32px
+}
+.icon-xl {
+	font-size: 3.2rem; // 48px
+}
+
+.error, .required {
+	color: $error;
+	font-family: $font-primary;
+}
+
+.no-links {
+	cursor: default;
+	pointer-events: none;
+}
+
+.scroll-lock {
+	overflow: hidden; // Prevent element from scrolling
+}
+
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+// Spacers
+.spacer-10 {
+	height: 10px;
+}
+.spacer-20 {
+	height: 20px;
+}
+.spacer-100 {
+	height: 100px;
+}
+// By REM
+.spacer-1rem {
+	height: 1rem;
+}
+.spacer-2rem {
+	height: 2rem;
+}
+.spacer-5rem {
+	height: 5rem;
+}
+
+// Dividers
+hr {
+	&.primary {
+		background-color: $color-primary-blue;
+	}
+	&.secondary {
+		background-color: $color-primary-purple;
+	}
+	&.grey {
+		background-color: $color-primary-grey-light;
+	}
+}
+
+.disabled-field {
+	opacity: 0.4;
+	position: relative;
+}
+.disabled-field::after {
+	content: "";
+	width: 100%;
+	height: 45px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	cursor: not-allowed;
+}
+
+.center-vertical {
+	display: flex;
+	align-items: center;
+}
+
+.bg-grey-xtralight {
+	background-color: $color-primary-grey-xtralight;
+}
+.bg-grey-xxtralight {
+	background-color: $color-primary-grey-xxtralight;
+}
+
+.no-scale {
+	transform: none !important;
+}

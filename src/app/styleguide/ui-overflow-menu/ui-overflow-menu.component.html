@@ -1,0 +1,145 @@
+<section class="ui-overflow-menu">
+    <styleguide-view-details title="Ui Overflow menu">
+        <div details-overview>
+            Displays when a list of options need to be presented to the user.
+        </div>
+        <div details-usage>
+            Use when a single option needs to be selected from a list.
+        </div>
+        <div details-behavior>
+            Click the actionable icon to open the menu. Clicking a selection will apply that option
+        </div>
+    </styleguide-view-details>
+</section>
+<div class="row">
+
+    <!-- Begin Example 1 -->
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example 1:</h3>
+        <hr class="secondary">
+        <h6>
+            By default ui-overflow-menu receives an Array of strings and the position is
+            <b>"right bottom"</b>. <br> You can use <b>'divider'</b> to generate a separator line
+        </h6>
+        <div class="spacer-2rem"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">
+            Current selected option : <b>{{model3}}</b> <ui-overflow-menu [options]="options1" [(ngModel)]="model3"></ui-overflow-menu>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="col-xs-12">
+        <h3 class="nomargin">Code snippet:</h3>
+        <hr class="secondary">
+        <div>
+            <gh-gist src="https://gist.github.com/lueimg/4fb528016ab4ed20591dc9e08f147821.js"></gh-gist>
+        </div>
+    </div>
+    <!-- End Example 1 -->
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <!-- Begin Example 2 -->
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example 2:</h3>
+        <hr class="secondary">
+        <h6>
+            ui-overflow-menu receives an Array of Objects as well 
+        </h6>
+        <div class="spacer-2rem"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10">
+            Current selected option : <b>{{model4 | json }}</b><ui-overflow-menu [options]="options2" [(ngModel)]="model4"></ui-overflow-menu>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="col-xs-12">
+        <h3 class="nomargin">Code snippet:</h3>
+        <hr class="secondary">
+        <div>
+            <gh-gist src="https://gist.github.com/lueimg/3db557cdcc4d4358ebb408f1aa9c9f33.js"></gh-gist>
+        </div>
+    </div>
+    <!-- End Example 2 -->
+
+
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+
+    <!-- Begin Example 3 -->
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example 3:</h3>
+        <hr class="secondary">
+        <h6>
+            ui-overflow-menu receives a position like: <b> '' | 'top' | 'top left' | 'left' </b>
+        </h6>
+        <div class="spacer-2rem"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            Default <ui-overflow-menu [options]="options1"></ui-overflow-menu>
+        </div>
+        <div class="col-xs-3">
+            top <ui-overflow-menu position="top" [options]="options1"></ui-overflow-menu>
+        </div>
+        <div class="col-xs-3">
+            top left <ui-overflow-menu position="top left" [options]="options1"></ui-overflow-menu>
+        </div>
+        <div class="col-xs-3">
+            left <ui-overflow-menu position="left" [options]="options1"></ui-overflow-menu>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="col-xs-12">
+        <h3 class="nomargin">Code snippet:</h3>
+        <hr class="secondary">
+        <div>
+            <gh-gist src="https://gist.github.com/lueimg/9610c969ead836488f99538a4b1eadb9.js"></gh-gist>
+        </div>
+    </div>
+    <!-- End Example 3 -->
+
+
+
+    <!-- Begin Example 4 -->
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example 4:</h3>
+        <hr class="secondary">
+        <h6>
+            ui-overflow-menu as as simple menu:
+        </h6>
+        <div class="spacer-2rem"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <ui-overflow-menu [options]="options2" [showInContent]="true" [closeOnSelect]="true" [showSelectedIcon]="false" (clickOptionEvent)="onClickOption($event)" >
+                Item Text
+                <li custom-option>Testing 123...</li>
+            </ui-overflow-menu>
+        </div>
+        <div class="col-xs-6">
+            <b>{{ clickedOption | json }}</b>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    
+    <!-- End Example 4 -->
+
+    <!-- Begin Example 5 -->
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example 5</h3>
+        <hr class="secondary">
+        <h6>Providing custom content</h6>
+        <div class="spacer-2-rem"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <ui-overflow-menu>
+                <li custom-option>1</li>
+                <li custom-option>2</li>
+                <li custom-option>3</li>
+            </ui-overflow-menu>
+        </div>
+    </div>
+    <!-- End Example 5 -->

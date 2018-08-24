@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/package.schema.json",
+  "name": "@simplywell/ui-overflow-menu",
+  "version": "0.1.2",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^4.4.6",
+    "@angular/core": "^4.4.6",
+    "@angular/forms": "^4.4.6"
+  },
+  "ngPackage": {
+    "lib": {
+      "externals": {
+        "@simplywell/ui-icon": "@simplywell/ui-icon"
+      },
+      "entryFile": "public_api.ts"
+    }
+  },
+  "dependencies" : {
+    "@simplywell/ui-icon": "latest"
+  },
+  "publishConfig": {
+    "registry": "https://files.aws.viverae.technology/nexus/repository/npm-snapshots/"
+  }
+}

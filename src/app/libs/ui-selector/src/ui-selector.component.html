@@ -1,0 +1,6 @@
+<button class="selector"
+    [ngClass]="{'filled': selected, 'disabled': disabled}"
+    [disabled]="disabled"
+    (click)="onClick()">
+  <ng-content></ng-content>
+</button>

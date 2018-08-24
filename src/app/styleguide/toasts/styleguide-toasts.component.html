@@ -1,0 +1,99 @@
+<section class="toasts">
+
+    <styleguide-view-details [title]="'Success Toast'">
+        <div details-overview>
+            Displays when a user interaction is successful or positive.
+        </div>
+        <div details-usage>
+            Use when an action is completed successfully.
+        </div>
+        <div details-behavior>
+            Slides up from the bottom of the view.  Optionaly, may auto-dismiss after 5 seconds
+        </div>
+    </styleguide-view-details>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-6">
+                <ui-button
+                    type="standard"
+                    (click)="popSuccessToastNoCTA();">
+                    Pop Success Toast No CTA
+                </ui-button>
+            </div>
+            <div class="col-xs-6">
+                <ui-button
+                    type='standard'
+                    (click)="popSuccessToastWithCTA();">
+                    Pop Success Toast With CTA
+                </ui-button>
+            </div>
+        </div>
+    </div>
+
+    <styleguide-view-details title="Warning Toast">
+        <div details-overview>
+            Displays when a user interaction is incorrect or a system issue arises.
+        </div>
+        <div details-usage>
+            Use when a user action causes an issue or a system message needs to be communicated.
+        </div>
+        <div details-behavior>
+            Slides up from the bottom of the view. Optionaly, may auto-dismiss after 5 seconds
+        </div>
+    </styleguide-view-details>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-6">
+                <ui-button
+                    type="standard"
+                    (click)="popWarningToastNoCTA();">
+                    Pop Warning Toast No CTA
+                </ui-button>
+            </div>
+            <div class="col-xs-6">
+                <ui-button
+                    type='standard'
+                    (click)="popWarningToastWithCTA();">
+                    Pop Warning Toast With CTA
+                </ui-button>
+            </div>
+        </div>
+    </div>
+
+    <styleguide-view-details title="Alert Toast">
+        <div details-overview>
+            Displays when a critical issue arises.
+        </div>
+        <div details-usage>
+            Use when all interactions must be suspended due to a critical issue.
+        </div>
+        <div details-behavior>
+            Slides up from the bottom of the view. Persists until dismissed.
+        </div>
+    </styleguide-view-details>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <ui-button
+                    type="standard"
+                    (click)="popAlertToast();">
+                    Pop Alert Toast
+                </ui-button>
+            </div>
+            <div>
+                <p>To use you need to inject the ToastsService and bind an event to one of the service's Toast generation functions.</p>
+            </div>
+            <div>
+                <gh-gist src="https://gist.github.com/anonymous/6f60653775f195d9aa637eb6eb8b6b69.js"></gh-gist>
+            </div>
+            <p>Note: There are two functions that can be used to pop a Toast</p>
+            <div>
+                <gh-gist src="https://gist.github.com/codyw9524/8e227f1fc98ef5ac62066ff31625cbc4.js"></gh-gist>
+            </div>
+        </div>
+    </div>
+
+</section>

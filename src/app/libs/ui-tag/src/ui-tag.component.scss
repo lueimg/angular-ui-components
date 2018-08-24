@@ -1,0 +1,64 @@
+// Pull in the colors and variables needed
+@import '../../../../stylesheets/abstracts/base';
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	min-width: 100px;
+	height: 40px;
+	max-height: 40px;
+	margin: 0;
+	transition: all 0.1s;
+	border-radius: 3px;
+	background-color: $white;
+	color: $color-primary-blue;
+	font-family: $font-primary;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 0 15px;
+	border: 1px solid $color-grey-four;
+	p {
+		margin: 0 5px;
+		color: $color-grey-four;
+		font-size: $h5-font-size;
+	}
+	i {
+		margin-left: auto;
+		color: $color-primary-blue;
+		font-size: 20px;
+		transition: transform 0.4s;
+	}
+	&:hover {
+		border: 1px solid $color-primary-hover;
+		color: $color-primary-hover;
+	}
+	&:active {
+		background-color: $color-grey-three;
+		color: $color-primary-hover;
+	}
+	&.disabled {
+		border-color: $color-primary-grey-light;
+		opacity: 0.5;
+		color: $color-primary-grey-light;
+		cursor: default;
+	}
+	&.filled {
+		border: 0;
+		background-color: $color-primary-blue;
+		color: $white;
+		&:hover {
+			background-color: $color-primary-hover;
+			color: $white;
+		}
+		&:active {
+			background-color: $darker-blue-text;
+			color: $white;
+		}
+		p, i {
+			color: $white;
+		}
+		i {
+			transform: rotate(135deg);
+		}
+	}
+}

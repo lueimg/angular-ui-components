@@ -1,0 +1,105 @@
+<section class="styleguide-textarea-container">
+    <styleguide-view-details title="Form - Text Area">
+        <div details-overview>
+            <p>Displays as the standard text field within page content and when there are many input fields present.</p>
+            <p>Font colors may be changed for specific usage.</p>
+        </div>
+        <div details-usage>
+            <p>Useful for scenarios where you expect the user to input long or mulit-line text.</p>
+        </div>
+        <div details-behavior>
+            <p>Label and color transforms based on the state</p>
+        </div>
+    </styleguide-view-details>
+    <form [formGroup]="demoForm">
+
+        <!-- start Basic Usage -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <h3 class="nomargin">Basic Usage</h3>
+                <hr class="secondary">
+                <h6>
+                    By default the text area is a block level element.  
+                    Set the desired number of rows using the "rows" Input, default is 2.
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-textarea label="My Label" formControlName="firstInput" [rows]="3"></ui-textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- <div class="spacer-2rem"></div> -->
+                <h4 class="nomargin">Code snippet:</h4>
+                <hr class="secondary">
+                <gh-gist src="https://gist.github.com/codyw9524/9418cf584c48c6682fbfc872bc721f6f.js"></gh-gist>
+            </div>
+        </div>
+        <!-- end Basic Usage -->
+
+        <!-- start Auto Resize -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <h3 class="nomargin">Auto Resize</h3>
+                <hr class="secondary">
+                <h6>
+                    Optionally, the input will automatically resize itself as the user types.  Use attribute "autoresize" to activate.  
+                    The input will be sized intially based on the [rows] input and will autoresize until the [maxRows] input has been reached.
+                    The default value for [rows] and [maxRows] is 2.
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-textarea
+                    formControlName="secondInput"
+                    label="Auto Resize"
+                    [rows]="1"
+                    [maxRows]="3"
+                    autoresize>
+                </ui-textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 class="nomargin">Code snippet:</h4>
+                <hr class="secondary">
+                <gh-gist src="https://gist.github.com/codyw9524/759396d390f284d8acc6e5ac0e057e1e.js"></gh-gist>
+            </div>
+        </div>
+        <!-- end Auto Resize -->
+
+        <!-- start Manual Resize -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer-2rem"></div>
+                <h3 class="nomargin">Manual Resize</h3>
+                <hr class="secondary">
+                <h6>The normal CSS rules for the "resize" can be applied using the [resize] input.</h6>
+                <h6>The acceptable values are "none", "horizontal", "vertical", "inherit", "initial", or "both".</h6>
+                <h6>Default value is "none".</h6>
+                <h6>Note: Using "horiztonal" or "both" will result in the component becoming an "inline-block" element.</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-textarea
+                    formControlName="thirdInput"
+                    label="Manual Resize"
+                    [rows]="10"
+                    resize="both">
+                </ui-textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <gh-gist src="https://gist.github.com/codyw9524/d29ea1c9ef7efdf4f577a0ee9d37d537.js"></gh-gist>
+            </div>
+        </div>
+        <!-- end Manual Resize -->
+    </form>
+</section>

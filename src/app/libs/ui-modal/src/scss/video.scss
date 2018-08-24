@@ -1,0 +1,30 @@
+.modal-video {
+	position: fixed;
+	top: 100px;
+	left: 10%;
+	width: 80%;
+	height: 400px;
+	margin: 0 auto;
+	transform: scale(0.8);
+	transition: z-index 0s linear 0.5s, transform 1s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+	opacity: 0;
+	z-index: -1;
+	&.active {
+		transform: scale(1);
+		transition: z-index 0s linear 0s, transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+		opacity: 1;
+		z-index: 9999;
+	}
+
+	.close {
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		padding: 5px;
+		border: 1px solid $gray-medium;
+		border-radius: 50%;
+		background-color: $white;
+		opacity: 0.9;
+		z-index: 10000;
+	}
+}

@@ -1,0 +1,87 @@
+<section class="styleguide-form-radiobutton">
+
+	<styleguide-view-details [title]="'Form - Radio Button'">
+		<div details-overview>
+			Displays when a single option can be selected within a view.
+		</div>
+		<div details-usage>
+			Use to provide a single selection to the user from multiple options.
+		</div>
+		<div details-behavior>
+			Click to select. <br>Radio fills with a blue circle.
+		</div>
+	</styleguide-view-details>
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Stacked (default)</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+				Current Value: <b> {{ example1 }}</b>
+			<div class="spacer-2rem"></div>
+		</div>
+		<div class="col-xs-12">
+			<ui-radiobutton [groupName]="'group1'" value="value-a" [(ngModel)]="example1" [id]="'radio1'">this is my radio button label text</ui-radiobutton>
+			<ui-radiobutton [groupName]="'group1'" value="value-b" [(ngModel)]="example1" [id]="'radio2'">second option label text</ui-radiobutton>
+			<ui-radiobutton [groupName]="'group1'" value="value-c c" [(ngModel)]="example1" [id]="'radio3'">...third option label text</ui-radiobutton>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html">
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'"&gt;this is my radio button label text&lt;/ui-form-radiobutton&gt;
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'"&gt;second option label text&lt;/ui-form-radiobutton&gt;
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'"&gt;...third option label text&lt;/ui-form-radiobutton&gt;
+        	</pre>
+		</div>
+	</div>
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Inline</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			Select by setValue (Reactive form)
+			<br>
+			<ui-button type="link" size="small" (click)="setRadio('radio-1')"> radio 1</ui-button>
+			<ui-button type="link" size="small" (click)="setRadio('radio-2')"> radio 2</ui-button>
+			<ui-button type="link" size="small" (click)="setRadio('radio-3')"> radio 3</ui-button>
+			<div class="spacer-2rem"></div>			
+		</div>
+		<div class="col-xs-12">
+				Current Value: <b> {{ example2Ctr.value }}</b>
+			<div class="spacer-2rem"></div>
+		</div>
+		<form [formGroup]="example2Form">
+			<div class="col-xs-12">
+				<ui-radiobutton [groupName]="'group2'" formControlName="example2" value="radio-1" [id]="'radio4'" [display]="'inline'">inline label text 1</ui-radiobutton>
+				<ui-radiobutton [groupName]="'group2'" formControlName="example2" value="radio-2" [id]="'radio5'" [display]="'inline'">inline label text 2</ui-radiobutton>
+				<ui-radiobutton [groupName]="'group2'" formControlName="example2" value="radio-3" [id]="'radio6'" [display]="'inline'">inline label text 3</ui-radiobutton>
+			</div>
+		</form>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html">
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'" [display]="'inline'"&gt;inline label text 1&lt;/ui-form-radiobutton&gt;
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'" [display]="'inline'"&gt;inline label text 2&lt;/ui-form-radiobutton&gt;
+&lt;ui-form-radiobutton [groupName]="'group1'" [id]="'radio1'" [display]="'inline'"&gt;inline label text 3&lt;/ui-form-radiobutton&gt;
+        	</pre>
+		</div>
+	</div>
+
+</section>

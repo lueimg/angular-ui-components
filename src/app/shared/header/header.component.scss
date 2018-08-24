@@ -1,0 +1,43 @@
+// Pull in the colors and variables needed
+@import '../../../stylesheets/abstracts/base';
+
+header {
+	height: 120px;
+	margin-bottom: -60px;
+	background-color: $color-primary-blue;
+	.container {
+		padding: 1rem 40px 0;
+	}
+	&.tall {
+		height: 440px;
+		margin-bottom: -270px;
+	}
+
+	img {
+		margin-right: 40px;
+		float: left;
+	}
+	i {
+		position: relative;
+		top: 1rem;
+	}
+	nav {
+		a {
+			position: relative;
+			top: 10px;
+			margin-right: 1rem;
+			padding-right: 1rem;
+			border-right: 1px solid $white;
+			opacity: 0.85;
+			color: $white;
+			font-size: 1.6rem;
+			text-decoration: none;
+			&.active {
+				opacity: 1;
+			}
+			&:last-of-type {
+				border-right: 0;
+			}
+		}
+	}
+}

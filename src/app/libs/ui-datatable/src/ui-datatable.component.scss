@@ -1,0 +1,85 @@
+@import '../../../../stylesheets/abstracts/base';
+
+
+.ui-table {
+    border-bottom: none;
+
+    .table-title {
+        background-color: #f0f0f0;
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+    
+    .table-head, 
+    .table-body > .row{
+        align-items: flex-start;
+        display: flex;
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    .table-head {
+        background-color: #f0f0f0;
+        border-bottom: 2px solid #ddd;
+        color: #303233;
+        font-weight: bold;
+        padding: 0;
+        .table-col {
+            min-height: 41px;
+        }
+    }
+
+    .table-row {
+        border-bottom: 1px solid $color-primary-grey-xtralight;    
+        transition: all 0.25s ease-in-out 0s;
+
+        .showOnHoverRow {
+            opacity: 0;
+            transition: all 0.25s ease-in-out 0s;
+            a {
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            background-color: $color-primary-grey-xxtralight;
+            .showOnHoverRow {
+                opacity: 1;
+            }
+        }
+    }
+
+    .ui-table-col {
+        align-items: center;
+        display: flex;
+        min-height: 41px;
+        padding: 10px 15px;
+    }
+
+    .nopadding {
+        padding: 0;
+    }
+}
+
+.grid-pagination {
+	display: flex;
+	justify-content: flex-end;
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+	list-style: none;
+	height: 32px;
+}
+
+.grid-pagination li {
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	width: 31px;
+	line-height: 30px;
+	text-align: center;
+	color: $color-primary-grey-light;
+	&.active , &:hover {
+		color: #fff;
+		background-color: $color-primary-grey-light;
+    }
+}

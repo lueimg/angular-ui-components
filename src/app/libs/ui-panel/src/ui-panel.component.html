@@ -1,0 +1,13 @@
+<div class="ui-panel panel {{ class }} {{ cssClass }}" [ngClass]="{
+    'container': _container,
+    'ui-panel-full': _full,
+    'ui-panel-border-top-primary': _top_primary,
+    'ui-panel-border-top-secondary': _top_secondary
+}">
+    <div *ngIf="heading" class="row nopadding">
+        <div class="col-xs-12 nopadding">
+            <h1 class="panel-heading">{{ heading }}</h1>
+        </div>
+    </div>
+    <ng-content></ng-content>
+</div>

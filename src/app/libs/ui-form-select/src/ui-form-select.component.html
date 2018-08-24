@@ -1,0 +1,42 @@
+<div class="select-container"
+     [class.fit-to-container]="!dynamicSize"
+     [class.dynamic-size]="dynamicSize"
+     (clickOutside)="closeMenu()">
+     <div class="material-style-select"
+          [ngClass]="{'top-label': labelPosition === 'top'}">
+        <div class="ui-form-select-lbl"
+             #labelContainer
+             *ngIf="labelPosition" >
+             <!-- optional custom label -->
+            <ng-content></ng-content>
+            <!-- default label to be used with [label] Input -->
+            <label *ngIf="label">{{ label }}</label>
+            <!-- required indicator - works with default and custom labels -->
+            <span *ngIf="isRequired" class="isRequired">*</span>
+        </div>
+        <div class="selected"
+             #selectContainer 
+             [ngClass]="{ 'has-left-label': labelPosition === 'left' }"
+             (click)="toggleOptions($event);">
+             <div class="selected-text-container">
+                 <span class="selected-text"
+                       *ngIf="showSelectedText">{{ selectedOption?.name }}</span>
+                 <i class="viverae-icon-font icon-directional_caret-down"></i>
+             </div>
+            <div class="options"
+                 #optionsContainer
+                 [ngClass]="{ 'open': optionsState }">
+                <input class="search-input" type="text" placeholder="Filter ..."
+                       *ngIf="search"
+                       #searchInput
+                       (keyup)="filterList(searchInput.value)" />
+                <div class="option"
+                     *ngFor="let option of options"
+                     [ngClass]="{ 'active': option === selectedOption, 'disabled': option.disabled }"
+                     (click)="selectOption(option, $event);">
+                    <span>{{ option.name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

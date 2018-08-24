@@ -1,0 +1,96 @@
+<section class="loaders">
+
+	<styleguide-view-details [title]="'Form - Checkbox'">
+		<div details-overview>
+			Displays when there is a primary function within a view.
+		</div>
+		<div details-usage>
+			Use as the main call to action.
+			May also be styled in black when used on a light, solid color such as yellow.
+		</div>
+		<div details-behavior>
+			Initiates intended action.
+			Can be disabled when required inputs are not completed.
+			Theming applies to color.
+		</div>
+	</styleguide-view-details>
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Stacked or "block"  (default)</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-checkbox [name]="'checkbox1'">this is my label text</ui-checkbox>
+			<ui-checkbox [name]="'checkbox2'">next checkbox</ui-checkbox>
+			<ui-checkbox [name]="'checkbox3'">last checkbox with long text - Use as the main call to action. May also be styled in black when used on a light, solid color such as yellow.</ui-checkbox>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html">
+&lt;ui-checkbox [name]="'name identifier'"&gt;this is my label text&lt;/ui-checkbox&gt;
+        	</pre>
+		</div>
+	</div>
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: Inline</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-checkbox [name]="'checkbox4'" [display]="'inline'">inline check 1</ui-checkbox>
+			<ui-checkbox [name]="'checkbox5'" [display]="'inline'">inline check 2</ui-checkbox>
+			<ui-checkbox [name]="'checkbox6'" [display]="'inline'">inline check 3</ui-checkbox>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html">
+&lt;ui-checkbox [name]="'name identifier'" [display]="'block OR inline'"&gt;this is my label text&lt;/ui-checkbox&gt;
+        	</pre>
+		</div>
+	</div>
+
+	<!-- end Example -->
+
+	<!-- Example usage -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="spacer-2rem"></div>
+			<h3 class="nomargin">Example: disabled</h3>
+			<hr class="secondary">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<ui-checkbox [name]="'checkbox4'" [disabled]="true">Disabled check 1</ui-checkbox>
+			<ui-checkbox [name]="'checkbox6'" disabled checked>Disabled check 3</ui-checkbox>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+        	<pre class="pre" data-lang="html">
+&lt;ui-checkbox [name]="'name identifier'" [disabled]="true"&gt;this is my label text&lt;/ui-checkbox&gt;
+        	</pre>
+		</div>
+	</div>
+
+	<!-- end Example -->
+
+</section>

@@ -1,0 +1,173 @@
+<section class="form-selects">
+	<div class="row">
+		<div class="col-xs-12">
+			<styleguide-view-details title="Select Menu">
+				<div details-overview>
+					Displays when a list of options need to be presented to the user.
+				</div>
+				<div details-usage>
+					Use when a single option needs to be selected from a list.
+				</div>
+				<div details-behavior>
+					Click the actionable text to open the menu.
+					Clicking a selection will apply that option and close the menu.
+					States will mirror the Text Field pattern, where applicable.
+				</div>
+			</styleguide-view-details>
+		</div>
+		<div class="col-xs-12">
+			<div class="col-xs-12">
+				<h3 class="nomargin">Basic Usage:</h3>
+				<hr class="secondary">
+				<h6>
+					By default the select is a block level element and will fit to the width of it's container.  
+					A selected option who's content exceeds the width of the container will be redacted with an ellipsis.
+				</h6>
+			</div>
+			<div class="col-xs-6">
+				<form [formGroup]="myForm">
+					<ui-form-select
+						[options]="selectOptions"
+						formControlName="mySelect"
+						label="Type"
+						labelPosition="left">
+					</ui-form-select>
+				</form>
+			</div>
+			<div class="col-xs-12">
+				<div class="spacer-2rem"></div>
+				<h4 class="nomargin">Code snippet:</h4>
+				<hr class="secondary">
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/3baefe4041ca542cd45a5d3bbde47379.js"></gh-gist>
+				</div>
+				<div class="spacer-2rem"></div>
+				<h3 class="nomargin">Dynamic Size:</h3>
+				<hr class="secondary">
+				<h6>
+					Optionally the input [dynamicSize]="true" can be provided and the select element will grow/shrink to fit the
+					content length of the selected option.
+				</h6>
+				<div>
+					<form [formGroup]="myForm">
+						<ui-form-select
+							[dynamicSize]="true"
+							[options]="selectOptions"
+							formControlName="mySelect">
+						</ui-form-select>
+					</form>
+				</div>
+				<div class="spacer-2rem"></div>
+				<h4 class="nomargin">Code snippet:</h4>
+				<hr class="secondary">
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/bd0abe5463cfe13e2a08e7b7425f9d27.js"></gh-gist>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="spacer-2rem"></div>
+				<h3 class="nomargin">Labels:</h3>
+				<hr class="secondary">
+				<h6>
+					A label can be provided through the [label] input. The label can be positioned to 
+					either 'top' or 'left' through the [labelPosition] input.  By default the label will 
+					only be as large as it's content, however the [labelWidth] input can be used to set a 
+					specific value
+				</h6>
+				<br>
+				<div class="col-xs-6">
+					<form [formGroup]="myForm">
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="First Label"
+							labelPosition="top">
+						</ui-form-select>
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="Second Label"
+							labelPosition="left">
+						</ui-form-select>
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="Third Label"
+							labelPosition="left">
+						</ui-form-select>
+					</form>
+				</div>
+				<div class="col-xs-6">
+					<form [formGroup]="myForm">
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="1st"
+							labelPosition="left"
+							labelWidth="50px"
+							[isRequired]="true">
+						</ui-form-select>
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="2nd"
+							labelPosition="left"
+							labelWidth="50px"
+							[isRequired]="true">
+						</ui-form-select>
+						<ui-form-select
+							[options]="selectOptions"
+							formControlName="mySelect"
+							label="3rd"
+							labelPosition="left"
+							labelWidth="50px"
+							[isRequired]="true">
+						</ui-form-select>
+					</form>
+				</div>
+			</div>
+			<div class="spacer-2rem"></div>
+			<div class="col-xs-12">
+				<div>
+					<div class="spacer-2rem"></div>
+					<h4 class="nomargin">Code snippet:</h4>
+					<hr class="secondary">
+				</div>
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/117cf4f49c50b8416e1c1766e59ae806.js"></gh-gist>
+				</div>
+			</div>
+			<div class="spacer-2rem"></div>
+			<div class="col-xs-12">
+				<div>
+					<div class="spacer-2rem"></div>
+					<h3 class="nomargin">Select Options</h3>
+					<hr class="secondary">
+				</div>
+				<div>
+					<p>An array of options should be provided.  An example can be seen below:</p>
+				</div>
+				
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/69ea8b303395569f72ea3668baed555f.js"></gh-gist>
+				</div>
+
+				<div class="spacer-2rem"></div>
+				
+				<h4 class="nomargin">Source:</h4>
+				<hr class="secondary">
+
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/c89a66e006a564981c5662d274a234fb.js"></gh-gist>
+				</div>
+
+				<div class="spacer-2rem"></div>
+
+				<div>
+					<gh-gist src="https://gist.github.com/codyw9524/36c21791962cb1640c036d350e5aaa9a.js"></gh-gist>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

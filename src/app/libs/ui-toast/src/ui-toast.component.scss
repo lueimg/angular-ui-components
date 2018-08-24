@@ -1,0 +1,158 @@
+@import '../../../../stylesheets/abstracts/base.scss';
+
+.ui-toasts {
+	position: fixed;
+	z-index: 1004;
+	bottom: -200px;
+	width: 100%;
+	transition: bottom 0.75s ease-in-out 0s;
+	.ui-toast {
+		display: flex;
+		position: relative;
+		align-items: center;
+		width: 100%;
+		min-height: 84px;
+		padding: 10px 0;
+		border-radius: 0;
+		margin: 0 !important;
+		i {
+			margin: 0 !important;
+		}
+		.container {
+			height: 100%;
+			padding: 0 15px;
+			.row {
+				width: 100%;
+			}
+			.message {
+				margin: 0;
+				font-family: $font-primary;
+				font-size: 1.2rem;
+			}
+			.ui-toast-container {
+				display: flex;
+				align-items: center;
+				.ui-toast-icon-container {
+					display: flex;
+					align-items: center;
+					flex-grow: 0;
+				}
+				.ui-toast-message-container {
+					padding: 0 30px;
+					flex-grow: 1;
+				}
+				.dismiss-container {
+					margin-left: auto;
+				}
+			}
+		}
+		&.success {
+			background-color: $color-success;
+			i {
+				color: $white;
+			}
+			.message {
+				color: $white;
+			}
+		}
+		&.alert {
+			background-color: $color-alert;
+			i, .message, .countdown-number {
+				color: $white;
+			}
+			svg circle {
+				stroke: $white;
+			}
+		}
+		&.warning {
+			background-color: $color-warning;
+			i, .countdown-number {
+				color: $black;
+			}
+			svg circle {
+				stroke: $black;
+			}
+		}
+		.timestamp {
+			color: $base-text-color;
+			font-size: 0.8rem;
+		}
+
+		.dismiss {
+			cursor: pointer;
+		}
+
+		.countdown {
+			width: 40px;
+			height: 40px;
+			margin: 0;
+			margin-left: auto;
+		}
+
+		.countdown-number {
+			display: inline-block;
+			position: absolute;
+			width: 40px;
+			margin: 0 auto;
+			color: white;
+			font-weight: bold;
+			line-height: 40px;
+			text-align: center;
+			&.active {
+				animation: fadeout 5s linear infinite forwards;
+			}
+		}
+
+		svg {
+			width: 40px;
+			height: 40px;
+			transform: rotateY(-180deg) rotateZ(-90deg);
+		}
+
+		svg circle {
+			stroke-width: 2px;
+			stroke-linecap: round;
+			stroke-dasharray: 113px;
+			stroke-dashoffset: 0;
+			stroke: white;
+			fill: none;
+			&.active {
+				animation: countdown 5s linear infinite forwards, fadeout 5s linear infinite forwards;
+			}
+		}
+
+		@keyframes countdown {
+			from {
+				stroke-dashoffset: 0;
+			}
+			to {
+				stroke-dashoffset: 113px;
+			}
+		}
+		@keyframes fadeout {
+			0% {
+				opacity: 1;
+			}
+			75% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+
+	&.active {
+		bottom: 0;
+		transition: bottom 0.25s ease-in-out 0s;
+	}
+
+	&.style-demo {
+		position: relative;
+		.toast {
+			.container {
+				width: 100%;
+			}
+		}
+	}
+}

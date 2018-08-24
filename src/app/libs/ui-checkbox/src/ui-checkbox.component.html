@@ -1,0 +1,12 @@
+<span class="ui-checkbox {{display}}">
+    <input id="{{name}}" 
+            name="{{name}}" 
+            type="checkbox" 
+            (change)="onChange($event)" 
+            [disabled]="_disabled" 
+            [checked]="_checked">
+    <label for="{{name}}">
+        <ng-content></ng-content>
+    </label>
+    <span></span>
+</span>

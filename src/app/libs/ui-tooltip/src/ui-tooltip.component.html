@@ -1,0 +1,16 @@
+<div class="ui-tooltipped" (mouseenter)="mouseEnter()">
+  <span #contentWrapper 
+        class="uitooltipped-msg ui-tooltip-owner" 
+        [ngClass]="{'tooltip-trigger': onTopOfContent}">
+      <ng-content></ng-content>
+  </span>
+  <i *ngIf="!onTopOfContent" #tooltipIcon class="ui-tooltip-owner tooltip-trigger viverae-icon-font {{ iconName }} {{ iconClass }}"></i>
+  <div *ngIf="content || title" 
+        #tooltip  
+        class="ui-tooltip {{class}} {{position}}" 
+        [ngClass]="{'onTopOfContent': onTopOfContent}">
+      <div *ngIf="title" class="ui-tooltip-title">{{title}}</div>
+      <div *ngIf="content" class="ui-tooltip-content" [innerHTML]="content"></div>
+      <div #tooltipCaret class="ui-tooltip-caret"></div>
+  </div>
+</div>

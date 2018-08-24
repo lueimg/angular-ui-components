@@ -1,0 +1,17 @@
+@import "../../../stylesheets/abstracts/base";
+
+.iconography {
+	i {
+		margin: 1rem;
+		cursor: pointer;
+		&:hover {
+			color: $color-primary-grey-dark;
+		}
+	}
+	.examples {
+		i {
+			display: block;
+			float: none !important;
+		}
+	}
+}

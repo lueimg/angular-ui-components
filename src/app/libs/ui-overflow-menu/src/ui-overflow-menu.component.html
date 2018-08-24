@@ -1,0 +1,26 @@
+<div class="container-menu-overflow" [ngClass]="{'content': showInContent}" 
+        (mouseover)='onMouseover()' (mouseout)='onMouseout()'>
+    <i *ngIf="!showInContent; else componentContent" 
+        (click)="toggleMenu()"
+        class="menu-overflow viverae-icon-font icon-app_menu-overflow" [ngClass]="{'active': menuActive}"></i>
+    <ng-template #componentContent>
+        <div class="menu-overflow content" [ngClass]="{'active': menuActive}" (click)="toggleMenu()">
+            <ng-content></ng-content>
+        </div>
+    </ng-template>
+    <div #container class="menu-wrapper" [ngClass]="{'open': menuActive, 'content': showInContent}" >
+        <ul>
+            <li *ngFor="let option of options" [ngClass]="{'divider': UI_OVERFLOW_MENU_DIVIDER === option}"
+                    (click)="onClickOption(option)" >
+                {{optionName(option)}}
+                <ui-icon
+                    *ngIf="showSelectedIcon"
+                    [ngClass]="{'not-visible': !isOptionActive(option)}"
+                    name="icon-form_check"
+                    size="icon-md">
+                </ui-icon>
+            </li>
+            <ng-content select="[custom-option]"></ng-content>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+// .modal-footer {
+// 	padding: 2rem 0 0;
+// 	border: 0;
+
+// 	.button {
+// 		margin: auto;
+
+// 		&.accept {
+// 			font-size: 1.6rem;
+// 		}
+
+// 		&.cancel {
+// 			margin: 20px auto 0;
+// 			padding: 0;
+// 			color: $color-primary-grey-light;
+// 			font-size: 14px;
+// 		}
+// 	}
+// }
+
+
+// // Options typically display in the footer
+// .modal-options {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	margin-top: 30px;
+// 	font-weight: bold;
+// 	& div {
+// 		cursor: pointer;
+// 	}
+// 	.delete {
+// 		margin-bottom: 20px;
+// 		color: $red;
+// 		font-size: 1.5em;
+// 	}
+
+// 	.cancel {
+// 		color: $color-primary-grey-light;
+// 	}
+// 	.default {
+// 		color: $color-primary-blue;
+// 		font-size: 1.5em;
+// 	}
+// }
+
+// .modal-form-options {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	margin-top: 20px;
+// 	font-size: 1.2em;
+
+// 	.save {
+// 		color: $color-primary-blue;
+// 		cursor: pointer;
+// 	}
+// 	.cance {
+// 		color: $color-primary-grey-light;
+// 		cursor: pointer;
+// 	}
+// }
+
+// .buttons-in-column {
+// 	.options {
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
+// 		margin-top: 30px;
+// 		.save {
+// 			margin-bottom: 20px;
+// 			color: $color-primary-blue;
+// 			font-size: 1.5em;
+// 		}
+// 		.cancel {
+// 			color: $color-primary-grey-medium;
+// 		}
+// 	}
+// }
+
+// // Exceptions
+// .panel-full {
+// 	.modal-footer {
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+// }

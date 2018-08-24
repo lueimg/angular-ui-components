@@ -1,0 +1,42 @@
+.checkbox {
+	display: block;
+	line-height: 2rem;
+	input[type='checkbox'] {
+		display: none;
+	}
+	input[type='checkbox'] + label {
+		cursor: pointer;
+	}
+	input[type='checkbox'] + label:before {
+		content: ' ';
+		display: inline-block;
+		position: relative;
+		top: -1px;
+		width: 18px;
+		height: 18px;
+		margin-right: 10px;
+		transition: background 0.2s ease 0s, border 0.2s ease 0s;
+		border: 1px solid $light-gray-text;
+		border-radius: 2px;
+		background: $white;
+		color: $light-gray-text;
+		font-family: 'viverae-icon-font';
+		vertical-align: middle;
+	}
+	input[type='checkbox']:checked + label:before {
+		content: '\e604';
+		transition: background 0.2s ease 0s, border 0.2s ease 0s;
+		border: 1px solid $color-primary-blue;
+		background: $color-primary-blue;
+		color: $white;
+		font-size: 1.2rem;
+		line-height: 1.21rem;
+	}
+	&.block {
+		display: block;
+	}
+	&.inline {
+		display: inline-block;
+		margin-right: 2rem;
+	}
+}

@@ -1,0 +1,65 @@
+<div #datepickerContainer 
+    class="ui-calendar-container {{ class }}"
+    [ngClass]="{'shrink': shrinkErrorSpace}"
+    [class.opened]="opened || expanded" >
+
+    <!-- @NOTE we will need different classes depending on placement of calendar -->
+    <div class="ui-calendar-cal-container {{locationPosition}} {{locationPositionID}}" 
+        [class.opened]="opened"
+        [ngClass]="{'calendar-bottom': position === 'bottom', 'calendar-top': position === 'top'}"
+        [style.top]="calPosTop" 
+        [style.left]="calPosLeft">
+
+        <div class="calendar-header">
+            <i class="viverae-icon-font icon-directional_arrow-left" (click)="prevMonth()"></i>
+            <div class="calendar-select-container">
+                <form [formGroup]="yearForm">
+                    <ui-form-select [options]="years" formControlName="yearSelect" labelPosition="left" optionsHeight="204px">
+                        <h5 label>{{ date.format('MMMM') }}</h5>
+                    </ui-form-select>
+                </form>
+            </div>
+            <i class="viverae-icon-font icon-directional_arrow-right" (click)="nextMonth()"></i>
+        </div>
+        <div class="ui-calendar-day-names">
+            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="ui-calendar-days">
+            <span *ngFor="let d of days; let i = index;"
+                [class.is-unclickable]="!d.clickable" 
+                [class.today]="d.today" 
+                [class.is-active]="d.selected"
+                (click)="selectDate($event, i, d.clickable)">
+                {{ d.day }}
+            </span>
+        </div>
+        <div *ngIf="todayButton" class="clear"></div>
+        <div *ngIf="todayButton" class="today-container">
+            <button class="button button-standard block calendar-today" (click)="selectToday()">{{ todayLabel }}</button>
+        </div>
+    </div>
+
+    <div class="calendar-input-container">
+        <form *ngIf="displayInput" [formGroup]="yearForm" >
+            <ui-input #inputElement 
+                      formControlName="textInput" 
+                      [label]="label" 
+                      [autofocus]="autofocus"
+                      [required]="required" 
+                      [clearIcon]="clearIcon" 
+                      [checkIcon]="checkIcon">
+                    <ng-content></ng-content>
+            </ui-input>
+        </form>
+        <div class="toggle-calendar" [class.opened]="opened || expanded" (click)="toggle($event)">
+            <i class="viverae-icon-font {{ calendarIconName }} icon-20 text-info cal-icon" [class.ctrl-calendar]="displayInput"></i>
+        </div>
+        <div *ngIf="showExample" class="example viewFormat">{{ this.viewFormat | lowercase }}</div>
+    </div>
+
+    <!-- Only Dev mode: Use [displayErrorMessages]="true" -->
+    <div *ngIf="displayErrorMessages" class="calendar-input-errors-container" >
+       InputPicker Errors:  {{ yearForm.get('textInput').errors | json }}
+    </div>
+</div>

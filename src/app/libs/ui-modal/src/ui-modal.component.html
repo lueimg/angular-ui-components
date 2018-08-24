@@ -1,0 +1,37 @@
+<div #modalRoot class="ui-modal" [ngClass]="{ active: isOpened }" role="dialog" >
+    <div class="ui-modal-dialog modal-center {{ modalSize }} {{ modalClass }} {{ hideBorderTop ? 'hideBorderTop': ''}} {{ isOpened ? 'ui-scaleUpModal' : '' }} ">
+        <div class="ui-modal-content">
+            <div *ngIf="showHeader" class="modal-header {{ titleAlign }}">
+                <h2 *ngIf="title">{{ title }}</h2>
+                <a *ngIf="!hideCloseButton" 
+                    (click)="close()" 
+                    class="ctrl-close">
+                    <i class="viverae-icon-font icon-app_close"></i>
+                </a>
+                <ng-content select="[modal-header]"></ng-content>
+            </div>
+
+            <div class="modal-body {{ modalSizeBodyHeight }} {{ showHeader ? 'withheader' : 'noheader'}} {{ showFooter ? 'withfooter' : 'nofooter'}}">
+                <ng-content select="[modal-content]"></ng-content>
+            </div>
+
+            <div *ngIf="showFooter" class="modal-footer">
+                
+                <ng-content select="[modal-footer]"></ng-content>
+
+                <button *ngIf="submitButtonLabel" 
+                        (click)="submit()"
+                        class="button button-{{ submitButtonStyle }}"
+                        type="button">{{ submitButtonLabel }}</button>
+                <br/>
+                <button *ngIf="cancelButtonLabel" 
+                        (click)="cancel()"
+                        class="button button-{{ cancelButtonStyle }}" 
+                        type="button"
+                        data-dismiss="modal" > {{ cancelButtonLabel }}</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

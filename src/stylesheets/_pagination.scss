@@ -1,0 +1,22 @@
+.pagination {
+	 > li {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		margin-top: 1rem;
+		padding: 1rem;
+		color: $app-link-text-color;
+		font-family: $font-primary-semibold;
+		line-height: 2rem;
+		text-align: center;
+		cursor: pointer;
+		&:hover {
+			background-color: $color-grey-two;
+			color: $app-link-text-color;
+		}
+		&.active, &ui-active {
+			background-color: $color-primary-blue;
+			color: $white;
+		}
+	}
+}

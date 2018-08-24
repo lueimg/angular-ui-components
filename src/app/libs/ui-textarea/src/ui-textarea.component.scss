@@ -1,0 +1,191 @@
+@import '../../../../stylesheets/abstracts/base';
+
+.textarea-input-group {
+    position: relative;
+    margin-bottom: 45px;
+    margin-top: 20px;
+    // display: block;
+    &.useBlock {
+        display: block;
+    }
+    &.useInlineBlock {
+        display: inline-block;
+    }
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border: 0;
+        border-bottom: 1px solid $color-grey-one;
+        font-size: 1rem;
+        line-height: normal;
+        &:hover {
+            border-bottom: 1px solid $color-primary-grey-medium;
+        }
+        &.ng-dirty.ng-invalid {
+            border-bottom: 1px solid $error;
+        }
+        &.ng-valid {
+            border-bottom: 1px solid $color-grey-one;
+        }
+        &.large {
+            font-size: 1.2rem;
+        }
+        &.xlarge {
+            font-size: 1.467rem
+        }
+    }
+    textarea:focus {
+        outline: none;
+    }
+    // Label
+    label {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: $color-primary-grey-light;
+        font-size: 1rem;
+        font-weight: normal;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        margin: 0;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+
+    // Active state
+    textarea:focus.ng-empty ~ label,
+    textarea:focus ~ label,
+    textarea:valid ~ label {
+        top: -12px;
+        left: 0;
+        font-size: 0.9333rem;
+        &.large,
+        &.xlarge {
+            font-size: 0.9333rem;
+        }
+    }
+    textarea:valid ~ label {
+        color: $color-primary-grey-light;
+    }
+    textarea:focus ~ label {
+        color: $color-primary-blue !important;
+    }
+    textarea:focus.ng-dirty.ng-invalid ~ label,
+    textarea.ng-dirty.ng-invalid ~ label {
+        color: $error !important;
+    }
+
+    textarea.ng-empty ~ label {
+        top: 1rem;
+        font-size: 1rem;
+        &.large {
+            font-size: 1.2rem;
+        }
+        &.xlarge {
+            font-size: 1.467rem;
+        }
+    }
+
+    // Bottom bars
+    .bar {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .bar::before,
+    .bar::after {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        width: 0;
+        height: 1px;
+        background: $color-primary-blue;
+
+        transition: 0.2s ease all;
+           -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    .bar::before {
+        left: 50%;
+    }
+    .bar::after {
+        right: 50%;
+    }
+
+    // Active
+    textarea:focus ~ .bar::before,
+    textarea:focus ~ .bar::after {
+        width: 50%;
+    }
+
+    // Bar with validator
+    textarea.ng-invalid.ng-dirty ~ .bar::before,
+    textarea.ng-invalid.ng-dirty ~ .bar::after {
+        background: $error;
+    }
+    // input.ng-invalid ~ .bar::before,
+    // input.ng-invalid ~ .bar::after {
+    //     background: $error;
+    // }
+
+    // Validation icon
+    i {
+        position: absolute;
+        top: 10px;
+        right: -20px;
+        transition: all 0.25s ease 0s;
+        opacity: 0;
+        color: $color-grey-four;
+    }
+
+    textarea.ng-valid:focus ~ i {
+        transition: all 0.25s ease 0s;
+        opacity: 1;
+        color: $color-success;
+    }
+
+    .clear-input i {
+        top: 1rem;
+        // right: 0;
+        opacity: 1;
+    }
+}
+
+:host /deep/ .error-message-ani {
+	position: absolute;
+	z-index: -1;
+	top: 20px;
+	width: 100%;
+	height: 40px;
+	transition: top 0.25s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+	opacity: 0;
+	line-height: 40px;
+	.error {
+		min-height: 40px;
+	}
+	.error-message {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0.1s ease 0s;
+		opacity: 0;
+		line-height: 40px;
+
+		&.active {
+			transition: opacity 0.1s ease 0s;
+			opacity: 1;
+		}
+	}
+	&.active {
+		z-index: 1;
+		top: 40px;
+		transition: top 0.35s ease-in-out 0s, opacity 0.35s ease-in-out 0s;
+		opacity: 1;
+	}
+}
+

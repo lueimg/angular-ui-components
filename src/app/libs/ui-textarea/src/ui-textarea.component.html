@@ -1,0 +1,29 @@
+<div #container class="textarea-input-group">
+    <textarea
+        #input
+        name="form-input"
+        [rows]="rows"
+        (keyup)="onKeyup($event.target.value)"
+        [required]="_required"
+        [value]="inputValue"
+        class="{{ size }}"
+        [ngStyle]="{ 'resize': resize }"
+        [ngClass]="{
+            'ng-valid': control.valid,
+            'ng-invalid': control.invalid,
+            'ng-dirty': control.dirty,
+            'ng-empty': isInputEmpty()
+        }">
+    </textarea>
+    <!-- Adding classes manually in order to show error from parent from builder -->
+    <label #labelEl class="lbl {{ size }}" for="form-input">{{label}}
+        <span *ngIf="_required" class="required">*</span>
+    </label>
+    <i class="viverae-icon-font icon-form_check" *ngIf="_checkIcon"></i>
+    <span class="bar"></span>
+    <div class="clear-input" *ngIf="_clearIcon && inputValue">
+        <i class="pointer icon-18 viverae-icon-font icon-app_close-circle"
+          (click)="clearInput()"></i>
+    </div>
+    <ng-content></ng-content>
+</div>

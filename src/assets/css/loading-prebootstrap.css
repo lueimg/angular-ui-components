@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'ProximaNova';
+	src:
+			url('../fonts/ProximaNova.eot?') format('eot'),
+			url('../fonts/ProximaNova.woff') format('woff'),
+			url('../fonts/ProximaNova.ttf') format('truetype'),
+			url('../fonts/ProximaNova.svg#ProximaNova') format('svg');
+	font-weight: normal;
+	font-style:  normal;
+}
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src:
+			url('../fonts/ProximaNovaLight.eot?') format('eot'),
+			url('../fonts/ProximaNovaLight.woff') format('woff'),
+			url('../fonts/ProximaNovaLight.ttf') format('truetype'),
+			url('../fonts/ProximaNovaLight.svg#ProximaNova') format('svg');
+	font-weight: normal;
+	font-style:  normal;
+}
+
+.pre-bootstrap {
+	background-color: #f0f0f0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 999999;
+}
+.pre-bootstrap div.messaging {
+	color: #999;
+	left: 0px;
+	margin-top: -100px;
+	position: absolute;
+	right: 0px;
+	text-align: center;
+	top: 40%;
+}
+.pre-bootstrap h1 {
+	font-size: 28px;
+	line-height: 40px;
+	margin: 0 0 10px 5px;
+	color: #303233;
+	font-family: "ProximaNova-Light", Arial, Helvetica, sans-serif;
+}
+.pre-bootstrap p {
+	font-size: 18px;
+	line-height: 30px;
+	margin: 0 0 30px 0;
+}
+.loading {
+	animation: clockwise 1s linear infinite;
+	display: block;
+	height: 70px;
+	position: relative;
+	width: 70px;
+	margin-top: 0;
+}
+
+.loading,
+.loading:before,
+.loading:after {
+	border: 4px solid #f0f0f0;
+	border-radius: 50%;
+	border-top-color: rgba(48,50,51,0.5);
+	margin: auto;
+}
+.loading-container {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+.loading-container img  {
+	position: absolute;
+	top: 30px;
+	margin-left: -30px;
+}
+@keyframes clockwise {
+	0%  { transform: rotateZ(0deg) }
+	100%{ transform: rotateZ(360deg) }
+}
+
+@-webkit-keyframes clockwise {
+	0%  { transform: rotateZ(0deg) }
+	100%{ transform: rotateZ(360deg) }
+}
+@-moz-keyframes clockwise {
+	0%  { transform: rotateZ(0deg) }
+	100%{ transform: rotateZ(360deg) }
+}
+@-o-keyframes clockwise {
+	0%  { transform: rotateZ(0deg) }
+	100%{ transform: rotateZ(360deg) }
+}
+@keyframes clockwise {
+	0%  { transform: rotateZ(0deg) }
+	100%{ transform: rotateZ(360deg) }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.loading {
+		display: none;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+}

@@ -1,0 +1,58 @@
+<section class="selectors">
+
+	<styleguide-view-details [title]="'Selectors'">
+		<div details-overview>
+			Displays when a list of options are available to be chosen.
+		</div>
+		<div details-usage>
+			Use when one or multiple attributes may be selected by the user..
+		</div>
+		<div details-behavior>
+			Click to select and deselect.
+		</div>
+	</styleguide-view-details>
+
+	<div class="row">
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector [selected]="uiSelector1" (click)="uiSelector1 = !uiSelector1" disabled> Disabled</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector2" (click)="uiSelector2 = !uiSelector2" disabled>Disabled</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector3" (click)="uiSelector3 = !uiSelector3">Hello world</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector4" (click)="uiSelector4 = !uiSelector4">Hello world</ui-selector>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector5" (click)="uiSelector5 = !uiSelector5">Hello world</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector6" (click)="uiSelector6 = !uiSelector6">Hello world</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector7" (click)="uiSelector7 = !uiSelector7">Hello world</ui-selector>
+		</div>
+		<div class="col-xs-3 nopadding-left">
+			<ui-selector  [selected]="uiSelector8" (click)="uiSelector8 = !uiSelector8">Hello world</ui-selector>
+		</div>
+	</div>
+	
+	<div class="selector-container">
+		<pre class="pre" data-lang="html">
+&lt;ui-selector&gt;your label here&lt;/ui-selector&gt;
+        </pre>
+		<ui-selector  [selected]="uiSelector9" (click)="uiSelector9 = !uiSelector9">Your Label Here</ui-selector>
+		<hr>
+		<h4>Options</h4>
+		<p>Set as selected by default by providing the input 'selected' with a value of true</p>
+		<pre class="pre" data-lang="html">
+&lt;ui-selector [selected]="true"&gt;selected by default&lt;/ui-selector&gt;
+        </pre>
+		<ui-selector [selected]="true">selected by default</ui-selector>
+	</div>
+
+</section>

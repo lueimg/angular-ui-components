@@ -1,0 +1,271 @@
+<section>
+    <div class="row nomargin">
+        <div class="col-xs-12">
+            <h3>Wizard</h3>
+            <p>Displays a component with a Navigation at the top and a next button at the bottom</p>
+            <p>Each step compoennt require to be added as <b>EntryComponent</b></p>
+        </div>
+    </div>
+    <div class="row nomargin">
+        <div class="col-xs-12">
+            <div class="spacer-2rem"></div>
+            <div class="spacer-2rem"></div>
+            <h3>Properties</h3>
+            <table class="table">
+                <tr class="table-row">
+                    <th class="table-col">Property</th>
+                    <th class="table-col">Type</th>
+                    <th class="table-col">Default</th>
+                    <th class="table-col">Options</th>
+                    <th class="table-col">Description</th>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-col">title</th>
+                    <td class="table-col">string</td>
+                    <td class="table-col">''</td>
+                    <td class="table-col">any string</td>
+                    <td class="table-col">Label to the left of the navigation</td>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-col">components</th>
+                    <td class="table-col">{{ '{' }} {{ '}' }}: WizardComponents</td>
+                    <td class="table-col">null</td>
+                    <td class="table-col"></td>
+                    <td class="table-col">Object base on WizardComponents interface.
+                        <br> It required the properties:
+                        <b>onEmpty: any; steps: any[]; onComplete: any;</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Example usage -->
+    <div class="row nomargin-bottom">
+        <div class="col-xs-12">
+            <div class="spacer-2rem"></div>
+            <h3 class="nomargin">Example:</h3>
+            <hr class="secondary">
+            <div class="spacer-2rem"></div>
+
+            <h4> the Empty Component</h4>
+            <div class="spacer-2rem"></div>
+            <!-- example  -->
+            <div class="row">
+                <div class="row">
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="wizardOneCode"></pre>
+                    </div>
+                    <!-- end code -->
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard empty" [components]="wizardOne"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+            <h4> Show 3 steps Component</h4>
+            <div class="spacer-2rem"></div>
+            <!-- example  -->
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard empty" [components]="wizardTwo"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                            <pre class="pre" data-lang="html" [innerHTML]="wizardTwoCode"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+            <!-- example  -->
+            <h4> Show 3 steps Component and a Resume Component</h4>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard empty" [components]="wizardTree"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="wizardThreeCode"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+            <!-- example  -->
+            <h4> Implement Exit buttom</h4>
+            <p>Each step need to implement the interface <b>WzOnExit</b></p>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard with Exit" [components]="example4"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="code4"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+            <!-- example  -->
+            <h4> Implement Save and Exit buttom</h4>
+            <p>Each step need to implement the interface <b>WzOnSaveAndExit</b></p>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard with Exit" [components]="example5"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="code5"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+            <!-- example  -->
+            <h4> Implement Next buttom</h4>
+            <p>Each step need to implement the interface <b>WzOnNext</b></p>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard with Exit" [components]="example6"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="code6"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+
+            <!-- example  -->
+            <h4>Disallow navigation on First Step</h4>
+            <p>Each step need to implement the interface <b>WzAllowNavigation</b></p>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard with Exit" [components]="example7"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="code7"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+
+            <!-- example  -->
+            <h4>Allow Navigation on Complete Component</h4>
+            <p>The complete component needs to implement <b>WzNavigate</b></p>
+            <p>Required : initialize the property with <b> = new EventEmitter&lt;number&gt;();</b></p>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="row">
+                    <!-- component -->
+                    <div class="col-xs-12 nopadding">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <wizard title="Wizard with Exit" [components]="example8"></wizard>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end component -->
+                    <!-- code -->
+                    <div class="col-xs-12 nopadding-left">
+                        <pre class="pre" data-lang="html" [innerHTML]="code8"></pre>
+                    </div>
+                    <!-- end code -->
+                </div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+                <div class="spacer-2rem"></div>
+            </div>
+            <!-- end Example -->
+
+
+        </div>
+    </div>
+</section>

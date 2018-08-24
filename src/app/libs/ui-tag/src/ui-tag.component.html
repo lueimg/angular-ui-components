@@ -1,0 +1,6 @@
+<div class="tag" 
+    [ngClass]="{ 'filled': selected, 'disabled': disabled }" 
+    (click)="setActivated()">
+  <p><ng-content></ng-content></p>
+  <i class="viverae-icon-font icon-form_add"></i>
+</div>

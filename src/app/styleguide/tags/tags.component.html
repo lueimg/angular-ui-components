@@ -1,0 +1,140 @@
+<div class="web-selectors-tags">
+
+    <styleguide-view-details [title]="'Tags'">
+        <div details-overview>
+            Displays when there is a primary function within a view.
+        </div>
+        <div details-usage>
+            Use as the main call to action. May also be styled in black when used on a light, solid color such as yellow.
+        </div>
+        <div details-behavior>
+            Initiates intended action. Can be disabled when required inputs are not completed. Theming applies to color
+        </div>
+    </styleguide-view-details>
+
+    <hr>
+    <div class="tag-container">
+        <h2>Tag</h2>
+        <hr>
+        <h4>Usage</h4>
+        <p>Displays when tags can be associated to content. </p>
+        <h4>Behavior</h4>
+        <p>Click to select and deselect</p>
+        <pre class="pre" data-lang="html">
+&lt;ui-tag&gt;your label here&lt;/ui-tag&gt;
+        </pre>
+        <ui-tag>your label here</ui-tag>
+        <hr>
+        <h4>Options</h4>
+        <p>Set as selected by default by providing the input 'selected' with a value of true</p>
+        <pre class="pre" data-lang="html">
+&lt;ui-tag [selected]="true"&gt;selected by default&lt;/ui-tag&gt;
+        </pre>
+        <ui-tag [selected]="true">selected by default</ui-tag>
+    </div>
+</div>
+
+<div class="spacer-2rem"></div>
+<div class="spacer-2rem"></div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example: UI Tag types </h3>
+        <hr class="secondary">
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="col-xs-12">
+        <ui-tag>Default</ui-tag>
+        <ui-tag [selected]="true">Selected</ui-tag>
+        <ui-tag [disabled]="true">Disabled</ui-tag>
+        <ui-tag [selected]="true" [disabled]="true">Selected Disabled</ui-tag>
+        <div class="spacer-2rem"></div>
+        <ui-tag (click)="alert()">Click me!</ui-tag>
+    </div>
+</div>
+
+<div class="spacer-2rem"></div>
+<div class="spacer-2rem"></div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example: UI Tag with ngModel </h3>
+        <hr class="secondary">
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-6">
+            <ui-tag [(ngModel)]="tag10">ng Model</ui-tag>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ tag10 }}</b>
+        </div>
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="row">
+        <div class="col-xs-6">
+            <ui-tag [(ngModel)]="tag11" [disabled]="true">Disabled</ui-tag>
+        </div>
+        <div class="col-xs-6">
+            Value :
+            <b>{{ tag11 }}</b>
+        </div>
+    </div>
+</div>
+
+
+<div class="spacer-2rem"></div>
+<div class="spacer-2rem"></div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="nomargin">Example: UI Tag with FormControlName </h3>
+        <hr class="secondary">
+    </div>
+    <div class="spacer-2rem"></div>
+    <div class="spacer-2rem"></div>
+    <div class="col-xs-12">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-xs-6">
+                    <ui-tag formControlName="tag1">Tag 1</ui-tag>
+                </div>
+                <div class="col-xs-6">
+                    Value :
+                    <b>{{ tag1.value }}</b>
+                </div>
+            </div>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ui-tag formControlName="tag2">Tag 2</ui-tag>
+                </div>
+                <div class="col-xs-6">
+                    Value :
+                    <b>{{ tag2.value }}</b>
+                </div>
+            </div>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ui-tag formControlName="tag3" [disabled]="true" >Disabled by Attr</ui-tag>
+                </div>
+                <div class="col-xs-6">
+                    Value :
+                    <b>{{ tag3.value }}</b>
+                </div>
+            </div>
+            <div class="spacer-2rem"></div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ui-tag formControlName="tag4" >Disabled by Form</ui-tag>
+                </div>
+                <div class="col-xs-6">
+                    Value :
+                    <b>{{ tag4.value }}</b>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

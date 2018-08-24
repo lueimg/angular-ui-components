@@ -1,0 +1,40 @@
+#############
+## Main
+#############
+node_modules
+npm-debug.log*
+
+#############
+## IDE
+#############
+.idea
+.project
+.settings
+.vscode
+
+#############
+## OSX
+#############
+.DS_Store
+**/.DS_Store
+
+#############
+## BUILD
+#############
+dist
+dll
+compiled
+**/dist
+**/node_modules
+#############
+## Front End Dev
+#############
+.csscomb.json
+.scss-lint.yml
+
+#############
+## Accidental package lock
+#############
+package-lock.json
+application_styleguide.iml
+.awcache/

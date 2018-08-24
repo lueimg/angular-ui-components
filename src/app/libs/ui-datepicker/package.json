@@ -1,0 +1,31 @@
+{
+    "$schema": "../../../../node_modules/ng-packagr/package.schema.json",
+    "name": "@simplywell/ui-datepicker",
+    "version": "0.3.20",
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular/common": "^4.4.6",
+        "@angular/core": "^4.4.6",
+        "@angular/forms": "^4.4.6",
+        "rxjs": "^5.5.7"
+    },
+    "ngPackage": {
+        "lib": {
+            "externals": {
+                "@simplywell/ui-form-select": "@simplywell/ui-form-select",
+                "@simplywell/ui-input": "@simplywell/ui-input",
+                "moment": "moment",
+                "rxjs": "rxjs"
+            },
+            "entryFile": "public_api.ts"
+        }
+    },
+    "dependencies": {
+        "@simplywell/ui-form-select": "latest",
+        "@simplywell/ui-input": "latest",
+        "moment": "^2.21.0"
+    },
+    "publishConfig": {
+        "registry": "https://files.aws.viverae.technology/nexus/repository/npm-snapshots/"
+    }
+}
